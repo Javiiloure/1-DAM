@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arboles>
+    <arbol>
+        <nombre>Acer monspessulanum</nombre>
+        <comun>Arce de Montpellier, Arce menor</comun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>De 6 a 10 metros</altura>
+        <forma>Copa esférica. tronco principal recto con bifurcaciones. Ramaje colgante.</forma>
+        <color>Color en primavera: Haz verde brillante, envés verde blanquecino.</color>
+        <resistencia>Resistencia a las heladas: Heladas fuertes(Hasta -15ºC)</resistencia>
+    </arbol>
+    <arbol>
+        <nombre>Olea Europea</nombre>
+        <comun>Olivo</comun>
+        <vegetacion>Perenne</vegetacion>
+        <altura>De 8 a 15 metros</altura>
+        <forma>Copa irregular, Tronco principal con bifurcaciones</forma>
+    </arbol>
+</arboles>

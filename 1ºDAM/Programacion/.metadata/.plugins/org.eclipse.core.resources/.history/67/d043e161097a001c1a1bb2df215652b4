@@ -1,0 +1,106 @@
+
+public class Empleado {
+	String nif;
+	String nombre;
+	double sueldo;
+	int horas_extra;
+	double IRPF;
+	boolean casado;
+	int hijos;
+	double importe_extra;
+	
+	public Empleado () {
+		this.nif = "";
+		this.nombre = "";
+		this.sueldo = 0;
+		this.horas_extra = 0;
+		this.IRPF = 0;
+		this.casado = false;
+		this.hijos = 0;
+		this.importe_extra = 0;
+	}
+	
+	public Empleado (String nif, String nombre, double sueldo, int horas_extra, double IRPF,
+			 boolean casado, int hijos, double importe_extra) {
+		this.nif = nif;
+		this.nombre = nombre;
+		this.sueldo = sueldo;
+		this.horas_extra = horas_extra;
+		this.IRPF = IRPF;
+		this.casado = casado;
+		this.hijos = hijos;
+		this.importe_extra = importe_extra;
+	}
+	
+	public void setnif(String nif) {
+		this.nif = nif;
+	}
+	
+	public String getnif() {
+		return nif;
+	}
+	
+	public void setnombre (String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public String getnombre() {
+		return nombre;
+	}
+	
+	public void setsueldo (double sueldo) {
+		this.sueldo = sueldo;
+	}
+	
+	public double getSueldo () {
+		return sueldo;
+	}
+	
+	public void sethoras_extra (int horas_extra) {
+		this.horas_extra = horas_extra;
+	}
+	
+	public int gethoras_extra() {
+		return horas_extra;
+	}
+	
+	public void setIRPF (double IRPF) {
+		this.IRPF = IRPF; 
+	}
+	
+	public double getIRPF() {
+		return IRPF;
+	}
+	
+	public void setcasado (boolean casado) {
+		this.casado = casado;
+	}
+	
+	public boolean getcasado() {
+		return casado;
+	}
+	
+	public void sethijos(int hijos) {
+		this.hijos = hijos;
+	}
+	
+	public int gethijos() {
+		return hijos;
+	}
+	
+	public static void setimporte_extra(double importe_extra) {
+		importe_extra = importe_extra;
+	}
+	
+	public static int getimporte_extra() {
+		
+		return importe_extra;
+	}
+	
+	public int importe_extra (int horas) {
+		int importe;
+		horas = gethoras_extra();
+		importe = horas * getimporte_extra();
+		return importe;
+	}
+}

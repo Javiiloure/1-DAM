@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Ejercicio8b {
+
+	public static void main(String[] args) {
+
+		int cont = 0;
+		int x = 0;
+		int suma = 0;
+		int resto = 0;
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca un número: ");
+		x = scan.nextInt();
+		scan.close();
+		while (cont != x) {
+			for (int i = 0; i < cont; i++) {
+				
+				resto = i % 2;
+				if (resto != 0) {
+					suma = suma + i;
+					cont++;
+				}
+			}
+		}
+		System.out.println("La suma es:" + suma);
+	}
+}

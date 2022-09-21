@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ies>
+    <nombre>IES Marcote</nombre>
+    <web>http://www.colegiomarcote.com</web>
+    <ciclos>
+        <ciclo id="ASIR">
+            <nombre>Administración de Sistemas Informáticos en Red</nombre>
+            <grado>Superior</grado>
+            <decretoTitulo año="2011" />
+        </ciclo>
+        <ciclo id="DAW">
+            <nombre>Desarrollo de Aplicaciones Web</nombre>
+            <grado>Superior</grado>
+            <decretoTitulo año="2011" />
+        </ciclo>
+        <ciclo id="SMR">
+            <nombre>Sistemas Microinformáticos y Redes</nombre>
+            <grado>Medio</grado>
+            <decretoTitulo año="2008" />
+        </ciclo>
+    </ciclos>
+
+<!-- CONSULTAS XPATH-->
+<!-- Mostrar el nombre del instituto:
+    /ies/nombre -->
+
+<!-- Mostrar la página web del instituto sin etiquetas:
+    /ies/web/text()-->
+
+<!-- Mostrar el nombre de los ciclos formativos sin etiquetas:
+    /ies/ciclos/ciclo/nombre/text()-->
+
+<!-- Mostrar las siglas por las que se conocen los ciclos formativos:
+    /ies/ciclos/ciclo/@id -->
+
+<!-- Mostrar los años en los que se publicaron los decretos de los ciclos formativos:
+    /ies/ciclos/ciclo/decretoTitulo/@año-->
+
+<!-- Mostrar toda la información de los ciclos formativos de grado medio:
+    /ies/ciclos//ciclo[grado = 'Medio']-->
+
+<!-- Mostrar los nombres de los ciclos formativos de grado superior:
+    ies/ciclos/ciclo[grado = 'Superior']/nombre-->
+    
+<!-- Mostrar los nombres de los ciclos formativos anteriores a 2010 sin etiquetas:
+    ies/ciclos/ciclo[decretoTitulo/@año < 2010]/nombre/text()-->
+
+<!-- Mostrar los nombres de los ciclos formativos de 2008 o de 2011:
+    ies/ciclos/ciclo[decretoTitulo/@año = 2011 or 2008]/nombre/text()-->
+</ies>

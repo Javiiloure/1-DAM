@@ -1,0 +1,160 @@
+package vista;
+
+import java.util.Scanner;
+
+public class ArticuloVista {
+	private static Scanner scan = new Scanner(System.in);
+
+	public static void añadirArticulo() {
+		String select;
+		boolean exit = false;
+		int stock;
+		double precio = 0;
+		do {
+			System.out.println("Seleccione el tipo de articulo" + "\n1/Planta" + "\n2/Maceta");
+			select = scan.nextLine();
+			switch (select) {
+			case "1":
+				String nombre_planta;
+				String nombre_cientifico;
+				boolean flor;
+				String caracteristicas_regadio;
+				System.out.println("Introduzca el nombre de la planta: ");
+				nombre_planta = scan.nextLine();
+				System.out.println("Introduzca el nombre cientifico: ");
+				nombre_cientifico = scan.nextLine();
+				while (exit != true) {
+					System.out.println("Indique si es o no una flor:" + "\n1/Es una flor " + "\n2/No es un a flor");
+					select = scan.next();
+					switch (select) {
+					case "1":
+						exit = true;
+						flor = true;
+						break;
+					case "2":
+						exit = true;
+						flor = false;
+						break;
+					default:
+						System.out.println("Seleccione una opcion valida.");
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca las características de regadío(100 char max):");
+					caracteristicas_regadio = scan.next();
+					if (caracteristicas_regadio.length() > 100) {
+						System.out
+								.println("Se ha excedido la longitud permitida, introduzca una descripción más corta.");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca el stock del articulo");
+					stock = scan.nextInt();
+					if (stock < 0) {
+						System.out.println("El stock no puede ser negativo");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Intorduzca el precio del articulo");
+					precio = Double.parseDouble(scan.next());
+					if (precio < 0) {
+						System.out.println("El precio no puede ser negativo");
+					} else {
+						exit = true;
+					}
+					System.out.println(precio);
+				} // Formatear precio
+
+				break;
+
+			case "2":
+				int alto_cm;
+				int diametro_cm;
+				String color;
+				String material;
+				boolean exterior;
+				while (exit != true) {
+					System.out.println("Introduzca la altura en cm:");
+					alto_cm = scan.nextInt();
+					if (alto_cm < 0) {
+						System.out.println("La altura no puede ser negativa");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca el diametro en cm:");
+					diametro_cm = scan.nextInt();
+					if(diametro_cm < 0) {
+						System.out.println("El diametro no puede ser negativo.");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while(exit != true) {
+					System.out.println("Selecccione un color para la maceta:" + "\n1/Blanco" + "\n2/Negro" + "\n3/Gris"
+							+ "\n4/Verde" + "\n5/Rojo" + "\n6/Azul" + "\n7/Amarillo" + "\n8/Violeta" + "\n9/Naranja");
+					select = scan.next();
+					switch(select) {
+					case"1": color = "Blanco"; exit = true; break;
+					case"2": color = "Negro"; exit = true; break;
+					case"3": color = "Gris"; exit = true; break;
+					case"4": color = "Verde"; exit = true; break;
+					case"5": color = "Rojo"; exit = true; break;
+					case"6": color = "Azul"; exit = true; break;
+					case"7": color = "Amarillo"; exit = true; break;
+					case"8": color = "Violeta"; exit = true; break;
+					case"9": color = "Naranja"; exit = true; break;
+					default: System.out.println("Seleccione una opcion valida.");
+					}
+				}
+				exit = false;
+				while(exit != true) {
+					System.out.println("Selecccione un material para la maceta:" + "\n1/Plastico" + "\n2/Arcilla" + "\n3/Piedra"
+							+ "\n4/Madera" + "\n5/Cemento" + "\n6/Fibrocemento");
+					select = scan.next();
+					switch(select) {
+					case"1": material = "Plastico"; exit = true; break;
+					case"2": material = "Arcilla"; exit = true; break;
+					case"3": material = "Piedra"; exit = true; break;
+					case"4": material = ""; exit = true; break;
+					case"5": material = "Rojo"; exit = true; break;
+					case"6": material = "Azul"; exit = true; break;
+					default: System.out.println("Seleccione una opcion valida.");
+					}
+				}
+			default:
+				System.out.println("Seleccione una opcion valida.");
+			}
+		} while (exit != true);
+	}
+
+	public void borrarArticulo() {
+
+	}
+
+	public void modificarArticulo() {
+
+	}
+
+	public void listarArticulos() {
+
+	}
+
+	public void resumenTickets() {
+
+	}
+
+	public void articulosMasVendidos() {
+
+	}
+}

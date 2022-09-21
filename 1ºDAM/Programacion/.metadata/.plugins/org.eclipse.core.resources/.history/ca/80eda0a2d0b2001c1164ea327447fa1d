@@ -1,0 +1,64 @@
+
+public class Direccion {
+
+	protected static enum tipo_vias {
+		Calle, Avenida, Plaza, Camino, Carretera, Paseo
+	}
+
+	protected static final tipo_vias TIPO_POR_DEFECTO = tipo_vias.Calle;
+	private tipo_vias tipo_via;
+	private String nombre_via;
+	private int numero;
+	private int CP;
+
+	public Direccion() {
+		this.tipo_via = TIPO_POR_DEFECTO;
+		this.nombre_via = "";
+		this.numero = 0;
+		this.CP = 0;
+	}
+
+	public Direccion(tipo_vias via, String nombre_via, int numero, int CP) {
+		this.tipo_via = via;
+		this.nombre_via = nombre_via;
+		this.numero = numero;
+		this.CP = CP;
+	}
+
+	public tipo_vias getVia() {
+		return tipo_via;
+	}
+
+	public void setVia(tipo_vias via) {
+		this.tipo_via = via;
+	}
+
+	public String getNombre_via() {
+		return nombre_via;
+	}
+
+	public void setNombre_via(String nombre_via) {
+		this.nombre_via = nombre_via;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public int getCP() {
+		return CP;
+	}
+
+	public void setCP(int cP) {
+		CP = cP;
+	}
+
+	@Override
+	public String toString() {
+		return "Direccion : " + tipo_via + nombre_via +  numero  + CP;
+	}
+}

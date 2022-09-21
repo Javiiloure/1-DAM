@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Ejercicio6 {
+
+	public static void main(String[] args[]) {
+
+		double suma = 0;
+		double x = 0;
+		double promedio = 0;
+		int i = 0;
+
+		for (i = 0; i < 20; i++) {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Introduzca un número: ");
+			x = scan.nextInt();
+			suma = suma + x;
+			scan.close();
+		}
+
+		promedio = suma / 20;
+		System.out.println("El promedio es: " + promedio);
+	}
+}

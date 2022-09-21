@@ -1,0 +1,8 @@
+package Ejer5;
+
+public class Azucarada extends Bebida {
+	
+	public int porcentaje_azucar;
+	public boolean promocion;
+	
+}

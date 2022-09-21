@@ -1,0 +1,22 @@
+package Ejer5;
+public class Almacen {
+	private Bebida [][] estanteria;
+	
+	public Almacen() {
+		estanteria = new Bebida[5][5];
+	}
+	
+	public Almacen(int filas, int columnas) {
+		estanteria = new Bebida [filas] [columnas];
+	}
+	
+	public double calcularPrecio () {
+	
+		for(int i = 0; i < estanteria.length; i++) {
+			for(int i = 0; i < estanteria[0].length; i++) {
+				
+			}
+		}
+		
+	}
+}

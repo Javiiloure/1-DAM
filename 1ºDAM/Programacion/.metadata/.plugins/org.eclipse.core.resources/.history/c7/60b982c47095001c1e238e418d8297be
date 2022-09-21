@@ -1,0 +1,80 @@
+
+public class Electrodomestico {
+	private double precio_base;
+	public static enum colores {blanco, negro, rojo, azul, gris};
+	private colores color;
+	public static enum consumo_energetico {A, B, C, D, E, F};
+	private consumo_energetico consumo;
+	private int peso;
+	private static final colores COLOR_POR_DEFECTO = colores.blanco;
+	private static final consumo_energetico CONSUMO_POR_DEFECTO = consumo_energetico.F;
+	private static final double PRECIO_POR_DEFECTO = 100;
+	private static final int PESO_POR_DEFECTO = 5;
+	
+	public Electrodomestico() {
+		this.precio_base = PRECIO_POR_DEFECTO;
+		this.color = COLOR_POR_DEFECTO;
+		this.consumo = CONSUMO_POR_DEFECTO; 
+		this.peso = PESO_POR_DEFECTO;
+	}
+	
+	public Electrodomestico(double precio_base, int peso) {
+		this.precio_base = precio_base;
+		this.color = COLOR_POR_DEFECTO;
+		this.consumo = CONSUMO_POR_DEFECTO;
+		this.peso = peso;
+	}
+	
+	public Electrodomestico (double precio_base, colores color, consumo_energetico consumo, int peso) {
+		this.precio_base = precio_base;
+		this.color = color;
+		this.consumo = consumo;
+		this.peso = peso;
+	}
+
+	public double getPrecio_base() {
+		return precio_base;
+	}
+
+	public void setPrecio_base(double precio_base) {
+		this.precio_base = precio_base;
+	}
+
+	public colores getColor() {
+		return color;
+	}
+
+	public void setColor(colores color) {
+		this.color = color;
+	}
+
+	public consumo_energetico getConsumo() {
+		return consumo;
+	}
+
+	public void setConsumo(consumo_energetico consumo) {
+		this.consumo = consumo;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+	
+	public void comprobarConsumoEnergetico (char letra) {
+		switch (letra) {
+		case'A':
+		case'B':
+		case'C':
+		case'D':
+		case'E':
+		case'F':
+			System.out.println("Letra correcta");
+		default:
+			this.consumo = CONSUMO_POR_DEFECTO;
+		}
+	}
+}

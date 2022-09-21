@@ -1,0 +1,6 @@
+
+public class Empleado {
+	public Empleado {
+		String nif = "";
+	}
+}

@@ -1,0 +1,213 @@
+import java.util.Scanner;
+
+public class JavierLoureiroP2PRO {
+	
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+
+		char select;
+		boolean exit = false;
+		do {
+			System.out.println("Menú principal, seleccione una opción: " + "\n1/Contador de días" + "\n2/Combinatorio"
+					+ "\n3/Números perfectos" + "\n0/Salir del programa");
+			select = scan.next().charAt(0);
+			switch (select) {
+			case '1':
+				int año;
+				String mes;
+				int dias;
+				System.out.println("Ha elegido contador de días.");
+				System.out.println("Introduzca el año: ");
+				año = scan.nextInt();
+				System.out.println("Introduca el mes:");
+				mes = scan.next();
+				mes = mes.toLowerCase();
+				dias = dias_mes(año, mes);
+				System.out.println("tiene " + dias + " dias");
+				break;
+			case '2':
+				int comb;
+				int m;
+				int n;
+				boolean exit2 = false;
+				System.out.println("Ha elegido Combinatorio.");
+				do {
+					System.out.println("Introduzca el mayor número: ");
+					m = scan.nextInt();
+					System.out.println("Introduzca el menor número: ");
+					n = scan.nextInt();
+					if (m < 0 || n < 0) {
+						System.out.println("Introduzca números positivos");
+						exit = false;
+					} else if (n > m) {
+						System.out.println("Introduzca los números de mayor a menor.");
+						exit2 = false;
+					} else {
+						exit2 = true;
+					}
+				} while (exit2 != true);
+				comb = combinatorio(m, n);
+				System.out.println("El combinatorio de " + m + " y de " + n + " es " + comb);
+				break;
+			case '3':
+				int x;
+				int y;
+				boolean perfecto;
+				System.out.println("Ha elegido Números perfectos.");
+				do {
+					System.out.println("Introduzca mayor número:");
+					x = scan.nextInt();
+					System.out.println("Introduzca el menor número:");
+					y = scan.nextInt();
+					if(y > x) {
+						System.out.println("Introduzca los números en el orden correcto.");
+					}
+				}while (y > x);
+				System.out.println("Los números perfectos comprendidos entre " + y + " y " + x + " son:");
+				for(int i = y; i < x; i++) {
+					perfecto = perfecto(i);
+					if(perfecto == true) {
+						System.out.println(i);
+					}
+				}
+				break;
+			case '0':
+				System.out.println("Cerrando el programa.");
+				exit = true;
+				break;
+			default:
+				System.out.println("Elija una opción válida");
+			}
+		} while (exit != true);
+		scan.close();
+	}
+
+	public static int dias_mes(int año, String mes) {
+		int dias = 0;
+		boolean bisiesto;
+		boolean exit = true;
+		do {
+			switch (mes) {
+			case "1":
+			case "enero":
+				dias = 31;
+				break;
+			case "2":
+			case "febrero":
+				bisiesto = bisiesto(año);
+				if (bisiesto == false) {
+					dias = 28;
+				} else if (bisiesto == true) {
+					dias = 29;
+				}
+				exit = true;
+				break;
+			case "3":
+			case "marzo":
+				dias = 31;
+				exit = true;
+				break;
+			case "4":
+			case "abril":
+				dias = 30;
+				exit = true;
+				break;
+			case "5":
+			case "mayo":
+				dias = 31;
+				exit = true;
+				break;
+			case "6":
+			case "junio":
+				dias = 30;
+				exit = true;
+				break;
+			case "7":
+			case "julio":
+				dias = 31;
+				exit = true;
+				break;
+			case "8":
+			case "agosto":
+				dias = 31;
+				exit = true;
+				break;
+			case "9":
+			case "septiembre":
+				dias = 30;
+				exit = true;
+				break;
+			case "10":
+			case "octubre":
+				dias = 31;
+				exit = true;
+				break;
+			case "11":
+			case "noviembre":
+				dias = 30;
+				exit = true;
+				break;
+			case "12":
+			case "diciembre":
+				dias = 31;
+				exit = true;
+				break;
+			default:
+				exit = false;
+				System.out.println("Opción no válida");
+				System.out.println("Introduzca el año :");
+				año = scan.nextInt();
+				System.out.println("Introduzca el mes ");
+				mes = scan.next();
+				mes = mes.toLowerCase();
+			}
+		} while (exit != true);
+		
+		System.out.println("El mes " + mes + " del año " + año);
+		return dias;
+	}
+
+	public static boolean bisiesto(int a) {
+		boolean x;
+		if ((a % 4 == 0) && ((a % 100 != 0) || (a % 400 == 0))) {
+			x = true;
+		} else {
+			x = false;
+		}
+		return x;
+	}
+
+	public static int combinatorio(int m, int n) { //http://iterando.online/ejercicios-resueltos/numero-combinatorio-en-java/
+		int comb;
+		int m_menos_n = m - n;
+		comb = ((factorial(m)) / ((factorial(n) * factorial(m - n))));
+		return comb;
+	}
+
+	public static int factorial(int a) {
+		int suma = 1;
+		for (int i = 1; i <= a; i++) {
+			suma = suma * i;
+		}
+		a = suma;
+		return a;
+	}
+
+	public static boolean perfecto(int x) {
+		int suma= 0;
+		boolean perfecto;
+		for(int i = 1; i < x; i++) {
+			if(x % i == 0) {
+				suma = suma + i;
+			}
+		}
+		if(suma == x){
+			perfecto = true;
+		}
+		else {
+			perfecto = false;
+		}
+		return perfecto;
+	}
+}

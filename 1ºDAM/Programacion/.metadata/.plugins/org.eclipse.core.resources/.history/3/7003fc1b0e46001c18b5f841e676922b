@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+
+		char select;
+		boolean exit = false;
+		
+		Scanner scan = new Scanner(System.in);
+		do { System.out.println("Menú principal, seleccione una opción válida: " + "\n1/Año bisiesto" + "\n2/Combinatorio"
+				+ "\n3/Números perfectos" + "\n0/Salir del programa");
+		select = scan.next().charAt(0);
+		switch (select) {
+		case '1':
+			System.out.println("Ha elegido Año bisiesto.");
+			//bisiesto();
+			break;
+		case '2':
+			System.out.println("Ha elegido Combinatorio.");
+			//combinatorio();
+			break;
+		case '3':
+			System.out.println("Ha elegido Números perfectos.");
+			//perfectos();
+			break;
+		case '0':
+			System.out.println("Cerrando el programa.");
+			exit = true;
+			break;
+		default:
+			System.out.println("Elija una opción válida");
+			}
+		}while(exit != true);
+	}
+
+	public static void bisiesto() {
+
+	}
+
+	public static void combinatorio() {
+
+	}
+
+	public static void perfectos() {
+
+	}
+}

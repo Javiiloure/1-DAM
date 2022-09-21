@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class JavierLoureiroP3PRO {
+	static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		int select;
+		boolean exit = false;
+		 do {
+			 System.out.println("Menú principal, seleccione una opción: \n"
+			 		+ "1/ Buscador de elemento en vector \n"
+			 		+ "2/ Punto silla \n"
+			 		+ "3/ ");
+		 }while (exit != true);
+
+	}
+
+}

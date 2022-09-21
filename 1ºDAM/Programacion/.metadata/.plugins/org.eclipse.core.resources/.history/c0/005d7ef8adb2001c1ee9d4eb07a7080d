@@ -1,0 +1,131 @@
+
+public class Piso extends Inmueble{
+
+	public int n_piso;
+	public String letra;
+	public boolean estudio;
+	
+	public Piso() {
+		super();
+		this.n_piso = 0;
+		this.letra = "";
+		this.estudio = false;
+	}
+	
+	public Piso (Direccion direccion,int n_habitaciones, int m2, double precio_venta, double precio_alquiler, boolean garaje, boolean alquiler, boolean venta, int n_piso, String letra, boolean estudio) {
+		super(direccion, n_habitaciones, m2, precio_venta, precio_alquiler, garaje, alquiler, venta);
+		this.n_piso = n_piso;
+		this.letra = letra;
+		this.estudio = estudio;
+		if (this.estudio == true) {
+			super.n_habitaciones = 1;
+		}
+	}
+
+	public int getN_piso() {
+		return n_piso;
+	}
+
+	public void setN_piso(int n_piso) {
+		this.n_piso = n_piso;
+	}
+
+	public String getLetra() {
+		return letra;
+	}
+
+	public void setLetra(String letra) {
+		this.letra = letra;
+	}
+
+	public boolean isEstudio() {
+		return estudio;
+	}
+
+	public void setEstudio(boolean estudio) {
+		this.estudio = estudio;
+	}
+	
+	public boolean getAlquiler() {
+		return alquiler;
+	}
+
+	public void setAlquiler(boolean alquiler) {
+		this.alquiler = alquiler;
+		if(alquiler == false) {
+			this.precio_alquiler = 0;
+		}
+	}
+
+	public boolean getVenta() {
+		return venta;
+	}
+
+	public void setVenta(boolean venta) {
+		this.venta = venta;
+		if(venta == false) {
+			this.precio_venta = 0;
+		}
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Direccion getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getN_habitaciones() {
+		return n_habitaciones;
+	}
+
+	public void setN_habitaciones(int n_habitaciones) {
+		this.n_habitaciones = n_habitaciones;
+	}
+
+	public int getM2() {
+		return m2;
+	}
+
+	public void setM2(int m2) {
+		this.m2 = m2;
+	}
+
+	public double getPrecio_venta() {
+		return precio_venta;
+	}
+
+	public void setPrecio_venta(double precio_venta) {
+		this.precio_venta = precio_venta;
+	}
+
+	public double getPrecio_alquiler() {
+		return precio_alquiler;
+	}
+	
+	public void setPrecio_alquiler(double precio_alquiler) {
+		this.precio_alquiler = precio_alquiler;
+	}
+	
+	public boolean isGaraje() {
+		return garaje;
+	}
+
+	public void setGaraje(boolean garaje) {
+		this.garaje = garaje;
+	}
+	
+	@Override
+	public String toString() {
+		return super.id + "Piso [n_piso=" + n_piso + ", letra=" + letra + ", estudio=" + estudio + "]";
+	}
+}

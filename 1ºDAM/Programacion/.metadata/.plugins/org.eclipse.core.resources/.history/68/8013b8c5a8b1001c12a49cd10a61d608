@@ -1,0 +1,100 @@
+package examen;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Serie extends Audiovisual {
+	private int duracionCapitulo;
+	private ArrayList<Temporada> temporadas;
+	
+	
+	public Serie(plataformas plataforma, String titulo, String director, int anhoPubli, int duracionCapitulo,
+			ArrayList<Temporada> temporadas) {
+		super(plataforma, titulo, director, anhoPubli);
+		this.duracionCapitulo = duracionCapitulo;
+		this.temporadas = temporadas;
+	}
+
+	public int getDuracionCapitulo() {
+		return duracionCapitulo;
+	}
+
+	public void setDuracionCapitulo(int duracionCapitulo) {
+		this.duracionCapitulo = duracionCapitulo;
+	}
+
+	public ArrayList<Temporada> getTemporadas() {
+		return temporadas;
+	}
+
+	public void setTemporadas(ArrayList<Temporada> temporadas) {
+		this.temporadas = temporadas;
+	}
+	
+	public int numTemporadas() {
+		return temporadas.size();
+	}
+	
+	//TODO Realizar un método que devuelva el número total de capítulos de la serie
+	public int numTotalCapitulos() {
+		return 0;
+	}
+	
+	// Editar el toString para que muestre la información de forma correcta:
+	/*	Aprovechar la herencia para la creación correcta del toString
+	 * Ejemplo:
+	 * 
+	 * Serie: [Titulo], creada por [creador/a]
+	 * 		Año de publicación: [Año] 
+	 * 		Plataforma: [Plataforma] 
+	 * 		Número de temporadas: [numTemporadas]
+	 * 		Número total de capítulos: [numCapítulos]
+	 * 		Duración: [duracionTotal] min.
+	 * 
+	 * 
+	 * 
+	 * */
+	@Override
+	public String toString() {
+		String string;
+		int n_capitulos = 0;
+		for(int i = 0; i < temporadas.size(); i++) {
+			n_capitulos += temporadas.get(i).getNumCapitulos();
+		}
+		string = super.toString();
+		string += "Numero de temporadas " + temporadas.size() + "\n" +
+		"Numero total de capitulos: " + n_capitulos + "\nDuracion: " + duracionTotal();
+		return string;
+	}
+
+	//Editar el método para que calcule la duración total de la serie en minutos
+	@Override
+	public int duracionTotal() {
+		int duracion = 0;
+		for (int i = 0; i < temporadas.size(); i++) {
+			duracion += duracionCapitulo * temporadas.get(i).getNumCapitulos();
+		}
+		return duracion;
+	}
+	
+	/* Realizar el método que devuelva un array con los objetos Serie generados a 
+	* partir de los siguientes arrays de titulos y creadores y valores aleatorios para las duracioes,
+	* años de publicacion, plataformas, número de temporadas, etc. 
+	* Debe usarse obligatoriamente la clase Random para los números aleatorios.
+	* Los años de publicación no deben ser anteriores a 1980 ni superiores a 2020
+	* Las duraciones de los capitulos no deben ser inferiores a 15 minutos ni superiores a 80
+	* El número de temporadas no debe ser superior a 25 y debe ser positivo
+	* 
+	* Nota: el método debe devolver tantas series como elementos hay en los arrays de titulos y creadores, cada titulo se corresponde en posición con el creador de la serie.
+	* */
+	public static String [] titulos = {"Game of Thrones", "The Simpsons", "Brooklyn 99", "The Sopranos", "Breaking Bad", "Futurama", "The Umbrella Academy", "La casa de papel", "The Last Dance"};
+	public static String [] creadores = {"David Benioff", "Matt Groening", "Dan Goor", "David Chase", "Vince Gilligan", "Matt Groening","Steve Blackman", "Alex Pina", "Michale Tollin"};
+
+	public static Serie[] generadorSeries() {
+		Random random = new Random();
+		for (int i = 0; i < titulos.length; i++) {
+			new Pelicula(randomPlataforma(), titulos[i], creadores[i], random.nextInt(2020 + 1980), random.nextInt(180 + 80), true);
+		return null;
+	}
+	
+}

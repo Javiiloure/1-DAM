@@ -1,0 +1,135 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Agencia {
+
+	private ArrayList<Inmueble> Inmuebles = new ArrayList<Inmueble>();
+	private String nombre;
+	public Scanner scan = new Scanner(System.in);
+
+	public Agencia(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Agencia(String nombre, ArrayList<Inmueble> Inmuebles) {
+		this.nombre = nombre;
+		this.Inmuebles = Inmuebles;
+	}
+
+	public ArrayList<Inmueble> getInmuebles() {
+		return Inmuebles;
+	}
+
+	public void setInmuebles(ArrayList<Inmueble> inmuebles) {
+		Inmuebles = inmuebles;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void nuevo_inmueble() {
+		
+		int n_habitaciones;
+		int m2;
+		double precio;
+		boolean garaje;
+		boolean alquiler;
+		boolean venta;	
+		boolean exit = true;
+		int select = 0;
+		
+		
+		System.out.println("Ha seleccionado añadir un inmueble");
+		do {
+			System.out.println("Seleccione el tipo de inmueble: "
+				+ "\n1/Casa" + "\n2/Piso");
+			if (select != 1 || select != 2) {
+				System.out.println("Seleccione una opción válida");
+				exit = false;
+			}
+			} while (exit != true);
+		select = scan.nextInt();
+		switch (select) {
+		case 1:
+		case 2:
+		}
+		
+	}
+
+	public Direccion nuevaDireccion() {
+
+		Direccion direccion;
+		Direccion.tipo_vias via = Direccion.TIPO_POR_DEFECTO;
+		String nombre_via;
+		int CP;
+		int numero;
+		boolean exit = true;
+		int select;
+
+		do {
+			System.out.println("Seleccione un tipo de via:" + "1/Calle\n" + "2/Avenida\n" + "3/Plaza\n" + "4/Camino\n"
+					+ "5/Carretera\n" + "6/Paseo");
+			select = scan.nextInt();
+			switch (select) {
+			case 1:
+				via = Direccion.tipo_vias.Calle;
+				exit = true;
+				break;
+			case 2:
+				via = Direccion.tipo_vias.Avenida;
+				exit = true;
+				break;
+			case 3:
+				via = Direccion.tipo_vias.Plaza;
+				exit = true;
+				break;
+			case 4:
+				via = Direccion.tipo_vias.Camino;
+				exit = true;
+				break;
+			case 5:
+				via = Direccion.tipo_vias.Carretera;
+				exit = true;
+				break;
+			case 6:
+				via = Direccion.tipo_vias.Paseo;
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opcion válida");
+				exit = false;
+			}
+		} while (exit != true);
+
+		System.out.println("Introduzca el nombre:");
+		nombre_via = scan.next();
+
+		exit = true;
+		do {
+			System.out.println("Introduzca el numero:");
+			numero = scan.nextInt();
+			if (numero < 0) {
+				exit = false;
+				System.out.println("El numero debe ser positivo.");
+			}
+		} while (exit != true);
+
+		exit = true;
+		do {
+			System.out.println("Introduzca el codigo postal");
+			CP = scan.nextInt();
+			if (CP < 0) {
+				exit = false;
+				System.out.println("El codigo postal debe ser positivo");
+			}
+		} while (exit != true);
+		direccion = new Direccion(via, nombre_via, numero, CP);
+
+		return direccion;
+	}
+}

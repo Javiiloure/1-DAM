@@ -1,0 +1,14 @@
+package controlador;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
+public class TicketController {
+
+	public static void resumenTickets() {
+		
+	}
+	
+	public static void articulosMasVendidos() {
+		
+	}
+}

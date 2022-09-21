@@ -1,0 +1,23 @@
+
+public class ExamenPRO {
+
+	public static void main(String[] args) {
+		int lado = 5;
+		int apotema = 5;
+		int area;
+		area = area_pentagono(lado , apotema);
+		System.out.println(area);
+		
+		
+		
+		
+		
+	}
+	
+		public static int area_pentagono(int lado, int apotema) {
+			int area;
+			//int perimetro = lado * 5;
+			area = (((lado * 5) * apotema)/2);
+			return area;
+		}
+}

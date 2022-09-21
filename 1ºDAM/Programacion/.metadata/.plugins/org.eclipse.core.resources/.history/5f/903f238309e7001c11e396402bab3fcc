@@ -1,0 +1,31 @@
+package vista;
+
+public class ArticuloVista {
+	public void añadirArticulo() {
+		String select;
+		int stock;
+		double precio;
+		System.out.println("Seleccione el tipo de articulo"
+				+ "\n1/Planta" + "\n2/Maceta");
+	}
+	
+	public void borrarArticulo() {
+		
+	}
+	
+	public void modificarArticulo() {
+		
+	}
+	
+	public void listarArticulos() {
+		
+	}
+	
+	public void resumenTickets() {
+		
+	}
+	
+	public void articulosMasVendidos() {
+		
+	}
+}

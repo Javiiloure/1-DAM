@@ -1,0 +1,41 @@
+public class Fecha {
+		private int dia;
+		private int mes;
+		private int año;
+		
+		public Fecha() {
+			this.dia = 0;
+			this.mes = 0;
+			this.año = 0;
+		}
+		
+		public Fecha(int dia, int mes, int año) {
+			this.dia = dia;
+			this.mes = mes;
+			this.año = año;
+		}
+		
+		public void setdia (int dia) {
+			this.dia = dia;
+		}
+		
+		public int getdia() {
+			return dia;
+		}
+		
+		public void setmes(int mes) {
+			this.mes = mes;
+		}
+		
+		public int getmes() {
+			return mes;
+		}
+		
+		public void setaño(int año) {
+			this.año = año;
+		}
+		
+		public int getaño() {
+			return año;
+		}
+}

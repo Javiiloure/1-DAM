@@ -1,0 +1,261 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Agencia {
+
+	private ArrayList<Inmueble> Inmuebles = new ArrayList<Inmueble>();
+	private String nombre;
+	public Scanner scan = new Scanner(System.in);
+
+	public Agencia(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Agencia(String nombre, ArrayList<Inmueble> Inmuebles) {
+		this.nombre = nombre;
+		this.Inmuebles = Inmuebles;
+	}
+
+	public ArrayList<Inmueble> getInmuebles() {
+		return Inmuebles;
+	}
+
+	public void setInmuebles(ArrayList<Inmueble> inmuebles) {
+		Inmuebles = inmuebles;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void nuevo_inmueble() {
+
+		Direccion direccion;
+		int n_habitaciones = 1;
+		int m2 = 0;
+		boolean garaje = false;
+		boolean alquiler = false;
+		boolean venta = false;
+		double precio_venta = 0;
+		double precio_alquiler = 0;
+		boolean exit = true;
+		int select = 0;
+
+		System.out.println("Ha seleccionado añadir un inmueble");
+		direccion = nuevaDireccion();
+		do {
+			System.out.println("Introduzca el numero de habitaciones: ");
+			n_habitaciones = scan.nextInt();
+			if (n_habitaciones < 0) {
+				System.out.println("Introduzca un numero positivo");
+				exit = false;
+			} else {
+				exit = true;
+			}
+		} while (exit != true);
+		do {
+			System.out.println("Introduzca el tamaño(m2):");
+			m2 = scan.nextInt();
+			if (m2 < 0) {
+				System.out.println("El tamaño debe ser positivo");
+				exit = false;
+			} else {
+				exit = true;
+			}
+		} while (exit != true);
+		exit = false;
+		do {
+			System.out.println("Dispone de garaje?" + "\n1/Garaje disponible" + "\n2/Garaje no disponible");
+			select = scan.nextInt();
+			switch (select) {
+			case 1:
+				garaje = true;
+				exit = true;
+				break;
+			case 2:
+				garaje = false;
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opción válida.");
+			}
+		} while (exit != true);
+		exit = false;
+		do {
+			System.out
+					.println("Seleccione el tipo de contrato disponible:" + "\n1/Venta" + "\n2/Alquiler" + "\n3/Ambos");
+			select = scan.nextInt();
+			switch (select) {
+			case 1:
+				venta = true;
+				System.out.println("Introduzca el precio de venta:");
+				precio_venta = scan.nextDouble();
+				while (precio_venta < 0) {
+					System.out.println("El precio debe ser positivo" + "\nIntroduzca el precio de venta.");
+					precio_venta = scan.nextDouble();
+				}
+				exit = true;
+				break;
+			case 2:
+				alquiler = true;
+				System.out.println("Introduzca el precio de alquiler:");
+				precio_alquiler = scan.nextDouble();
+				while (precio_alquiler < 0) {
+					System.out.println("El precio debe ser positivo" + "\nIntroduzca el precio de alquiler:");
+					precio_alquiler = scan.nextDouble();
+				}
+				exit = true;
+				break;
+			case 3:
+				venta = true;
+				alquiler = true;
+				System.out.println("Introduzca el precio de venta:");
+				precio_venta = scan.nextDouble();
+				while (precio_venta < 0) {
+					System.out.println("El precio debe ser positivo" + "\nIntroduzca el precio de venta.");
+					precio_venta = scan.nextDouble();
+				}
+				System.out.println("Introduzca el precio de alquiler:");
+				precio_alquiler = scan.nextDouble();
+				while (precio_alquiler < 0) {
+					System.out.println("El precio debe ser positivo" + "\nIntroduzca el precio de alquiler:");
+					precio_alquiler = scan.nextDouble();
+				}
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opción válida.");
+			}
+		} while (exit != true);
+		exit = false;
+		do {
+			System.out.println("Seleccione el tipo de inmueble: " + "\n1/Casa" + "\n2/Piso");
+			select = scan.nextInt();
+			if (select != 1 || select != 2) {
+				System.out.println("Seleccione una opción válida");
+			} else {
+				exit = true;
+			}
+		} while (exit != true);
+		exit = false;
+		switch (select) {
+		case 1:
+			boolean jardin = false;
+			boolean piscina = false;
+			do {
+				System.out.println("La casa dispone de jardin?" + "\n1/Jardin disponible" + "\n2/Jardin no disponible");
+				select = scan.nextInt();
+				switch (select) {
+				case 1:
+					jardin = true;
+					exit = true;
+					break;
+				case 2:
+					jardin = false;
+					exit = true;
+					break;
+				default:
+					System.out.println("Seleccione una opción válida.");
+				}
+			} while (exit != true);
+			exit = false;
+			do {
+				System.out.println(
+						"La casa dispone de piscina?" + "\n1/Piscina disponible" + "\n2/Piscina no disponible");
+				select = scan.nextInt();
+				switch (select) {
+				case 1:
+					piscina = true;
+					exit = true;
+					break;
+				case 2:
+					piscina = false;
+					exit = true;
+					break;
+				default:
+					System.out.println("Seleccione una opción válida.");
+				}
+			} while (exit != true);
+			Inmuebles.add(new Casa(direccion, n_habitaciones, m2, precio_alquiler, precio_venta, garaje, alquiler,
+					venta, jardin, piscina));
+		case 2:
+		}
+
+	}
+
+	public Direccion nuevaDireccion() {
+
+		Direccion direccion;
+		Direccion.tipo_vias via = Direccion.TIPO_POR_DEFECTO;
+		String nombre_via;
+		int CP;
+		int numero;
+		boolean exit = true;
+		int select;
+
+		do {
+			System.out.println("Seleccione un tipo de via:" + "1/Calle\n" + "2/Avenida\n" + "3/Plaza\n" + "4/Camino\n"
+					+ "5/Carretera\n" + "6/Paseo");
+			select = scan.nextInt();
+			switch (select) {
+			case 1:
+				via = Direccion.tipo_vias.Calle;
+				exit = true;
+				break;
+			case 2:
+				via = Direccion.tipo_vias.Avenida;
+				exit = true;
+				break;
+			case 3:
+				via = Direccion.tipo_vias.Plaza;
+				exit = true;
+				break;
+			case 4:
+				via = Direccion.tipo_vias.Camino;
+				exit = true;
+				break;
+			case 5:
+				via = Direccion.tipo_vias.Carretera;
+				exit = true;
+				break;
+			case 6:
+				via = Direccion.tipo_vias.Paseo;
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opcion válida");
+				exit = false;
+			}
+		} while (exit != true);
+
+		System.out.println("Introduzca el nombre:");
+		nombre_via = scan.next();
+
+		exit = true;
+		do {
+			System.out.println("Introduzca el numero:");
+			numero = scan.nextInt();
+			if (numero < 0) {
+				exit = false;
+				System.out.println("El numero debe ser positivo.");
+			}
+		} while (exit != true);
+
+		exit = true;
+		do {
+			System.out.println("Introduzca el codigo postal");
+			CP = scan.nextInt();
+			if (CP < 0) {
+				exit = false;
+				System.out.println("El codigo postal debe ser positivo");
+			}
+		} while (exit != true);
+		direccion = new Direccion(via, nombre_via, numero, CP);
+
+		return direccion;
+	}
+}

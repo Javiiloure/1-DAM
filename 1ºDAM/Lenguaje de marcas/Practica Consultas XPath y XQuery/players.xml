@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<players>
+	<player>
+		<Name>Erasmus Wall</Name>
+		<Country>France</Country>
+		<Number>65</Number>
+		<Position>SD</Position>
+		<Secondary_Positions>LD, MC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Stephanie Cantrell</Name>
+		<Country>Netherlands</Country>
+		<Number>72</Number>
+		<Position>EX</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Dorian Cantu</Name>
+		<Country>Brazil</Country>
+		<Number>61</Number>
+		<Position>SD</Position>
+		<Secondary_Positions>EX, LI, DC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Timothy Foster</Name>
+		<Country>Norway</Country>
+		<Number>39</Number>
+		<Position>MC</Position>
+		<Secondary_Positions>MCD, MCO, DFC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Elmo Simmons</Name>
+		<Country>Singapore</Country>
+		<Number>44</Number>
+		<Position>LD</Position>
+		<Secondary_Positions>EX, MCO</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Hall Shannon</Name>
+		<Country>South Africa</Country>
+		<Number>76</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>LI, DC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Xandra Fox</Name>
+		<Country>China</Country>
+		<Number>78</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>MC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Matthew Tanner</Name>
+		<Country>Poland</Country>
+		<Number>93</Number>
+		<Position>MCO</Position>
+		<Secondary_Positions>MC, EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Herrod Stewart</Name>
+		<Country>United States</Country>
+		<Number>82</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>DFC, LD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Caleb Reyes</Name>
+		<Country>Russian Federation</Country>
+		<Number>96</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>EX, DFC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Giselle Clayton</Name>
+		<Country>Ireland</Country>
+		<Number>45</Number>
+		<Position>LI</Position>
+		<Secondary_Positions>EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Michael Bruce</Name>
+		<Country>Belgium</Country>
+		<Number>15</Number>
+		<Position>PT</Position>
+		<Secondary_Positions>DFC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Rebekah Doyle</Name>
+		<Country>Poland</Country>
+		<Number>4</Number>
+		<Position>EX</Position>
+		<Secondary_Positions>MCO</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Glenna Webb</Name>
+		<Country>Brazil</Country>
+		<Number>67</Number>
+		<Position>SD</Position>
+		<Secondary_Positions>LI, SD, LD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Nathan Stanley</Name>
+		<Country>Belgium</Country>
+		<Number>46</Number>
+		<Position>LD</Position>
+		<Secondary_Positions>MCO, MCD, SD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Clayton Moody</Name>
+		<Country>Nigeria</Country>
+		<Number>51</Number>
+		<Position>LI</Position>
+		<Secondary_Positions>SD, DC, MC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Ralph Olsen</Name>
+		<Country>Belgium</Country>
+		<Number>15</Number>
+		<Position>LD</Position>
+		<Secondary_Positions>MCO</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Nasim Abbott</Name>
+		<Country>Vietnam</Country>
+		<Number>8</Number>
+		<Position>PT</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Grace Riggs</Name>
+		<Country>Mexico</Country>
+		<Number>69</Number>
+		<Position>PT</Position>
+		<Secondary_Positions>SD, LD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Iola Melton</Name>
+		<Country>Ukraine</Country>
+		<Number>80</Number>
+		<Position>EX</Position>
+		<Secondary_Positions>MC, MCD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Levi Steele</Name>
+		<Country>Pakistan</Country>
+		<Number>69</Number>
+		<Position>MC</Position>
+		<Secondary_Positions>DC, DFC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Azalia Bates</Name>
+		<Country>United States</Country>
+		<Number>69</Number>
+		<Position>DFC</Position>
+		<Secondary_Positions>DFC, LD, DC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Libby Joyce</Name>
+		<Country>Italy</Country>
+		<Number>35</Number>
+		<Position>DFC</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Isabelle Sweeney</Name>
+		<Country>China</Country>
+		<Number>42</Number>
+		<Position>DFC</Position>
+		<Secondary_Positions>EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Idona Hardin</Name>
+		<Country>Belgium</Country>
+		<Number>51</Number>
+		<Position>SD</Position>
+		<Secondary_Positions>LI, DFC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Beau Dickson</Name>
+		<Country>France</Country>
+		<Number>15</Number>
+		<Position>SD</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Hammett Nieves</Name>
+		<Country>Chile</Country>
+		<Number>53</Number>
+		<Position>EX</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Derek Manning</Name>
+		<Country>Italy</Country>
+		<Number>24</Number>
+		<Position>MCO</Position>
+		<Secondary_Positions>SD, LI</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Quyn Thomas</Name>
+		<Country>South Africa</Country>
+		<Number>89</Number>
+		<Position>SD</Position>
+		<Secondary_Positions>DFC, MCO</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Dominic Vaughn</Name>
+		<Country>Spain</Country>
+		<Number>38</Number>
+		<Position>MCO</Position>
+		<Secondary_Positions>MC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Barclay Zimmerman</Name>
+		<Country>China</Country>
+		<Number>81</Number>
+		<Position>DFC</Position>
+		<Secondary_Positions>MCO</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Helen Hardy</Name>
+		<Country>United States</Country>
+		<Number>31</Number>
+		<Position>PT</Position>
+		<Secondary_Positions>DFC, SD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Alden Russo</Name>
+		<Country>Netherlands</Country>
+		<Number>64</Number>
+		<Position>MDC</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Maia Brady</Name>
+		<Country>New Zealand</Country>
+		<Number>55</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>MCD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Vanna Larson</Name>
+		<Country>Indonesia</Country>
+		<Number>50</Number>
+		<Position>PT</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Vernon Clay</Name>
+		<Country>France</Country>
+		<Number>80</Number>
+		<Position>DFC</Position>
+		<Secondary_Positions>SD, EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Lucian Price</Name>
+		<Country>Singapore</Country>
+		<Number>84</Number>
+		<Position>PT</Position>
+		<Secondary_Positions>EX, MC, MCD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Gail Phillips</Name>
+		<Country>Russian Federation</Country>
+		<Number>66</Number>
+		<Position>MCO</Position>
+		<Secondary_Positions>MC, EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Dillon Craig</Name>
+		<Country>India</Country>
+		<Number>23</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>MCD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Matthew Hart</Name>
+		<Country>Vietnam</Country>
+		<Number>15</Number>
+		<Position>MC</Position>
+		<Secondary_Positions>DC, DFC</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Theodore Hall</Name>
+		<Country>United Kingdom</Country>
+		<Number>44</Number>
+		<Position>DFC</Position>
+		<Secondary_Positions>SD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Rebecca Bowman</Name>
+		<Country>United Kingdom</Country>
+		<Number>88</Number>
+		<Position>MC</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Calista Figueroa</Name>
+		<Country>India</Country>
+		<Number>45</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>DFC, MCO, LD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Whoopi Emerson</Name>
+		<Country>Costa Rica</Country>
+		<Number>71</Number>
+		<Position>DC</Position>
+		<Secondary_Positions>EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Jackson Kidd</Name>
+		<Country>Poland</Country>
+		<Number>41</Number>
+		<Position>MC</Position>
+		<Secondary_Positions>EX</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Carl Humphrey</Name>
+		<Country>Norway</Country>
+		<Number>26</Number>
+		<Position>LD</Position>
+		<Secondary_Positions>MC, SD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Philip Scott</Name>
+		<Country>China</Country>
+		<Number>71</Number>
+		<Position>EX</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Denton Hendrix</Name>
+		<Country>Belgium</Country>
+		<Number>69</Number>
+		<Position>MDC</Position>
+		<Secondary_Positions>LD</Secondary_Positions>
+	</player>
+	<player>
+		<Name>Holmes Huffman</Name>
+		<Country>Austria</Country>
+		<Number>64</Number>
+		<Position>SD</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+	<player>
+		<Name>Igor Tyson</Name>
+		<Country>Colombia</Country>
+		<Number>27</Number>
+		<Position>MC</Position>
+		<Secondary_Positions></Secondary_Positions>
+	</player>
+</players>

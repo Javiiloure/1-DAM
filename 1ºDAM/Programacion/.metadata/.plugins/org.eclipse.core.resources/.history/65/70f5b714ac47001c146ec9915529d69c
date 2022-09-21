@@ -1,0 +1,119 @@
+import java.util.Scanner;
+
+public class JavierLoureiroP2PRO {
+	public static void main(String[] args) {
+
+		char select;
+		boolean exit = false;
+
+		Scanner scan = new Scanner(System.in);
+		do {
+			System.out.println("Menú principal, seleccione una opción: " + "\n1/Contador de días" + "\n2/Combinatorio"
+					+ "\n3/Números perfectos" + "\n0/Salir del programa");
+			select = scan.next().charAt(0);
+			switch (select) {
+			case '1':
+				System.out.println("Ha elegido contador de días.");
+				mes();
+				break;
+			case '2':
+				System.out.println("Ha elegido Combinatorio.");
+				combinatorio();
+				break;
+			case '3':
+				System.out.println("Ha elegido Números perfectos.");
+				perfectos();
+				break;
+			case '0':
+				System.out.println("Cerrando el programa.");
+				exit = true;
+				break;
+			default:
+				System.out.println("Elija una opción válida");
+			}
+		} while (exit != true);
+		scan.close();
+	}
+
+	public static void mes() {
+		String mes;
+		int año;
+		boolean bisiesto = false;
+		boolean exit = true;
+		Scanner scan = new Scanner(System.in);
+		do {
+			System.out.println("Introduca el mes:");
+			mes = scan.next();
+			mes = mes.toLowerCase();
+			System.out.println("Introduzca el año:");
+			año = scan.nextInt();
+			switch (mes) {
+			case "1":
+			case "enero":
+				System.out.println("El mes de enero tiene 31 días.");
+				break;
+			case "2":
+			case "febrero":
+				if ((año % 4 == 0 && año % 100 != 0) && (año % 400 == 0 && año % 100 != 0)) {
+					bisiesto = true;
+				}
+				if (bisiesto == false) {
+					System.out.println("El mes de febrero del año " + año + " tiene 28 días.");
+				} else if (bisiesto == true) {
+					System.out.println("El mes de febrero del año " + año + " tiene 29 días.");
+				}
+				break;
+			case "3":
+			case "marzo":
+				System.out.println("El mes de marzo tiene 31 días.");
+				break;
+			case "4":
+			case "abril":
+				System.out.println("El mes de abril tiene 30 días.");
+				break;
+			case "5":
+			case "mayo":
+				System.out.println("El mes de mayo tiene 31 días.");
+				break;
+			case "6":
+			case "junio":
+				System.out.println("El mes de junio tiene 30 días.");
+				break;
+			case "7":
+			case "julio":
+				System.out.println("El mes de julio tiene 31 días.");
+				break;
+			case "8":
+			case "agosto":
+				System.out.println("El mes de agosto tiene 31 días.");
+				break;
+			case "9":
+			case "septiembre":
+				System.out.println("El mes de septiembre tiene 30 días.");
+				break;
+			case "10":
+			case "octubre":
+				System.out.println("El mes de octubre tiene 31 días.");
+				break;
+			case "11":
+			case "noviembre":
+				System.out.println("El mes de noviembre tiene 30 días.");
+				break;
+			case "12":
+			case "diciembre":
+				System.out.println("El mes diciembre tiene 31 días.");
+			default:
+				System.out.println("Opción no válida");
+				exit = false;
+			}
+		} while (exit != true);
+	}
+
+	public static void combinatorio() {
+
+	}
+
+	public static void perfectos() {
+
+	}
+}

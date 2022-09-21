@@ -1,0 +1,38 @@
+package controlador;
+import bbdd.BDConnection;
+import modelo.Articulo;
+import modelo.Planta;
+import modelo.Maceta;
+import vista.Main;
+import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class ArticuloController {
+	private static ArrayList<Articulo> articulos;
+	private static ArrayList<Planta> plantas;
+	private static ArrayList<Maceta> macetas;
+	
+	public ArticuloController() {
+		plantas = new ArrayList<Planta>();
+		macetas = new ArrayList<Maceta>();
+		try {
+			getArticulos();
+		} catch(SQLException e) {
+			System.out.println("Error en la recuperación de datos.");
+		}
+	}
+	
+	public static void getArticulos() throws SQLException {
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "select *, stock, precio from planta p, articulo a where p.codigo_planta = a.codigo_articulo";
+		ResultSet rs = s.executeQuery(query);
+		while(rs.next()) {
+			System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getBoolean(4) + " " + rs.getString(5) + " " + rs.getInt(6) + " " + rs.getDouble(7));
+		}
+		query = "select *, stock, precio from maceta m, articulo a where m.codigo_maceta = a.codigo_articulo";
+	}
+}

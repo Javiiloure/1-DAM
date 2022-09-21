@@ -1,0 +1,22 @@
+
+public class Electrodomestico {
+	private double precio_base;
+	private static enum color {blanco, negro, rojo, azul, gris};
+	private color color;
+	private static enum consumo_energetico {A, B, C, D, E, F};
+	private consumo_energetico consumo;
+	private int peso;
+	
+	public Electrodomestico() {
+		this.precio_base = 100;
+		this.color = color.blanco;
+		this.consumo = consumo_energetico.F;
+		this.peso = 5; 
+	}
+	
+	public Electrodomestico(double precio_base, int peso) {
+		this.precio_base = precio_base;
+		this.color = color.blanco;
+		
+	}
+}

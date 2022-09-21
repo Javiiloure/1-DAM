@@ -1,0 +1,19 @@
+package controlador;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import vista.Main;
+
+
+
+public class TicketController {
+
+	public static void resumenTickets() throws SQLException {
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "select ticket, articulo, unidades from ticket_ar";
+	}
+	
+	public static void articulosMasVendidos() {
+		
+	}
+}

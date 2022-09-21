@@ -1,0 +1,54 @@
+package controlador;
+
+import modelo.Planta;
+import modelo.Maceta;
+import vista.Main;
+import java.util.ArrayList;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ArticuloController {
+	private static ArrayList<Planta> plantas = new ArrayList<Planta>();
+	private static ArrayList<Maceta> macetas = new ArrayList<Maceta>();
+	
+	public ArticuloController() {
+		plantas = new ArrayList<Planta>();
+		macetas = new ArrayList<Maceta>();
+		try {
+			getArticulos();
+		} catch(SQLException e) {
+			System.out.println("Error en la recuperación de datos.");
+		}
+	}
+	
+	public static void getArticulos() throws SQLException {
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "select *, stock, precio from planta p, articulo a where p.codigo_planta = a.codigo_articulo";
+		ResultSet rs = s.executeQuery(query);
+		while(rs.next()) {
+			Planta planta = new Planta(rs.getInt(1), rs.getInt(6), rs.getDouble(7), rs.getString(2), rs.getString(3), rs.getBoolean(4), rs.getString(5));
+			plantas.add(planta);
+		}
+		query = "select *, stock, precio from maceta m, articulo a where m.codigo_maceta = a.codigo_articulo";
+		rs = s.executeQuery(query);
+
+		Maceta.Color color = Maceta.Color.valueOf(rs.getString(4));
+		Maceta.Material material = Maceta.Material.valueOf(rs.getString(5));
+		while(rs.next()) {
+			Maceta maceta = (new Maceta(rs.getInt(1), rs.getInt(7), rs.getDouble(8), rs.getInt(2), rs.getInt(3), color, material, rs.getBoolean(6)));
+			macetas.add(maceta);
+		}
+	}
+	
+	public static void listarArticulos() throws SQLException {
+		getArticulos();
+		for(int i = 0 ; i < macetas.size(); i++) {
+			macetas.get(i).toString();
+		}
+		for(int i = 0; i < plantas.size(); i++) {
+			plantas.get(i).toString();
+		}
+	}
+}

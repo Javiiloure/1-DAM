@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class JavierLoureiroP5PRO {
+	public static void main(String args[]) {
+		Scanner scan = new Scanner (System.in);
+		String select;
+		boolean exit = false;
+		ArrayList<Inmueble> inmuebles = new ArrayList<Inmueble>();
+		inmuebles.add(new Casa());
+		inmuebles.add(new Piso(direccion, 3, 50, 150000, 420, true, true, true, 1, A, false);
+		Agencia Agencia = new Agencia ("Agencia", inmuebles);
+		
+		do {
+			System.out.println("Bienvenido a Agencia Inmobiliaria, seleccione una opción: ");
+			System.out.println("1/Añadir un nuevo inmueble a la lista");
+			System.out.println("2/Modificar un inmueble existente");
+			System.out.println("3/Listar inmuebles disponibles");
+			System.out.println("4/Listar dentro de un rango de precio");
+			System.out.println("5/Listar dentro de un rango de tamaño");
+			System.out.println("6/Eliminar un inmueble de la lista");
+			System.out.println("0/Cerrar el programa");
+			select = scan.nextLine();
+			switch(select) {
+			case"1": 
+				Agencia.nuevo_inmueble();
+				break;
+			case"2":
+				Agencia.modificar_inmueble();
+				break;
+			case"3":
+				break;
+			case"4":
+				break;
+			case"5":
+				break;
+			case"6":
+				break;
+			case"0":
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opción válida.");
+			}
+	} while (exit != true);
+		System.out.println("Cerrando el programa.");
+		scan.close();
+	}
+}

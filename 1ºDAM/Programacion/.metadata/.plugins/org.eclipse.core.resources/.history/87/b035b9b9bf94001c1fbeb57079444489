@@ -1,0 +1,26 @@
+
+public class Electrodomestico {
+	private double precio_base;
+	private static enum colores {blanco, negro, rojo, azul, gris};
+	private colores color;
+	private static enum consumo_energetico {A, B, C, D, E, F};
+	private consumo_energetico consumo;
+	private int peso;
+	private static final colores COLOR_POR_DEFECTO = colores.blanco;
+	private static final consumo_energetico CONSUMO_POR_DEFECTO = consumo_energetico.F;
+	private static final double PRECIO_POR_DEFECTO = 100;
+	private static final int PESO_POR_DEFECTO = 5;
+	
+	public Electrodomestico() {
+		this.precio_base = PRECIO_POR_DEFECTO;
+		this.color = COLOR_POR_DEFECTO;
+		this.consumo = CONSUMO_POR_DEFECTO; 
+		this.peso = PESO_POR_DEFECTO;
+	}
+	
+	public Electrodomestico(double precio_base, int peso) {
+		this.precio_base = precio_base;
+		this.color = colores.blanco;
+		
+	}
+}

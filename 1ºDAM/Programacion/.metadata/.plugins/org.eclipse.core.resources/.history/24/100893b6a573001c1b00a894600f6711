@@ -1,0 +1,7 @@
+public class Tema4 {
+
+	public static void main(String[] args) {
+		Libro libro1 = new Libro();
+		Libro libro2 = new Libro();
+	}
+}

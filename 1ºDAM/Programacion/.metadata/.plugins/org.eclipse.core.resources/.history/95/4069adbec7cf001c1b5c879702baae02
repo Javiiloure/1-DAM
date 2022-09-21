@@ -1,0 +1,94 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+import java.text.SimpleDateFormat;
+
+public class main {
+	public static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String usuario = "";
+		int select;
+		boolean exit = false;
+		while (exit != true) {
+			System.out.println("Bienvenido a registro de conexiones, seleccione una opción:"
+					+ "\n1/Acceder con el usuario del sistema" + "\n2/Acceder creando un nuevo usuario");
+			select = scan.nextInt();
+			switch (select) {
+			case 1:
+				usuario = System.getProperty("user.name");
+				exit = true;
+				break;
+			case 2:
+				System.out.println("Introduzca el nuevo usuario: ");
+				scan.nextLine();
+				usuario = scan.nextLine();
+				exit = true;
+				break;
+			default: System.out.println("Opción no válida.");
+			}
+		}
+		try {
+			comprobarEstructura(usuario);
+			registrarFechaHora(usuario);
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+ 
+	public static void comprobarEstructura(String usuario) throws IOException {
+		File actividad = new File("actividad");
+		File net = new File("net");
+		File log = new File("actividad/" + usuario + ".log");
+		String usr_name = System.getProperty("user.name");
+		File usr = new File("actividad/" + usr_name + ".log");
+		File netstat = new File("net/netstat_1.log");
+
+		if (!actividad.exists()) {
+			actividad.mkdir();
+			log.createNewFile();
+			usr.createNewFile();
+		} else {
+			if (!log.exists())log.createNewFile();
+			if (!usr.exists())usr.createNewFile();
+		}
+		if (!net.exists()) {
+			net.mkdir();
+			netstat.createNewFile();
+		} else {
+			if (!netstat.exists())
+				netstat.createNewFile();
+		}
+	}
+	
+	public static void registrarFechaHora(String usuario) throws IOException {
+		String datetime = getTimeStamp();
+		File usr = new File("actividad/" + usuario + ".log");
+		FileWriter fw = new FileWriter(usr, true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		if (usr.length() == 0) {
+			bw.write(datetime);
+			bw.flush();
+		} else {
+			bw.newLine();
+			bw.write(datetime);
+			bw.flush();
+		}
+		bw.close();
+	}
+
+	public static String getTimeStamp() {
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		String datetime = formatter.format(date);
+		return datetime;
+	}
+	
+	public static void escribirNetStatLog(String fichero, List<String> netstat) {
+		
+	}
+}

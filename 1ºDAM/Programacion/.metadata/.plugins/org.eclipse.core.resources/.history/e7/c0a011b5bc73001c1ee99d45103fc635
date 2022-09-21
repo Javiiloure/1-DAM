@@ -1,0 +1,10 @@
+public class Tema4 {
+
+	public static void main(String[] args) {
+		Libro libro1 = new Libro("4016022606126", "Montaraces", "J.K.Rowling", 254);
+		Libro libro2 = new Libro("7431567818525", "Piratas", "J.R.R Tolkien", 351);
+		
+		System.out.println(libro1.toString());
+		System.out.println(libro2.toString());
+	}
+}

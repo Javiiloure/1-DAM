@@ -1,0 +1,22 @@
+package Ejer5;
+
+public class Azucarada extends Bebida {
+	
+	public int porcentaje_azucar;
+	public boolean promocion;
+	
+	
+	public int getPorcentaje_azucar() {
+		return porcentaje_azucar;
+	}
+	public void setPorcentaje_azucar(int porcentaje_azucar) {
+		this.porcentaje_azucar = porcentaje_azucar;
+	}
+	public boolean isPromocion() {
+		return promocion;
+	}
+	public void setPromocion(boolean promocion) {
+		this.promocion = promocion;
+	}
+	
+}

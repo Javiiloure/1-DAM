@@ -1,0 +1,11 @@
+package vista;
+
+public class ArticuloVista {
+	public void añadirArticulo() {
+		
+	}
+	
+	public void borrarArticulo() {
+		
+	}
+}

@@ -1,0 +1,22 @@
+
+public class Empleado {
+	String nif;
+	String nombre;
+	double sueldo;
+	double horas_extra;
+	double IRPF;
+	boolean casado;
+	int hijos;
+	double importe_hora_extra;
+	
+	public Empleado () {
+		this.nif = "";
+		this.nombre = "";
+		this.sueldo = 0;
+		this.horas_extra = 0;
+		this.IRPF = 0;
+		this.casado = false;
+		this.hijos = 0;
+		this.importe_hora_extra = 0;
+	}
+}

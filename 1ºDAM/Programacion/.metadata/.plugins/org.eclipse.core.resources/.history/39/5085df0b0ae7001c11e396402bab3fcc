@@ -1,0 +1,37 @@
+package vista;
+import java.util.Scanner;
+public class ArticuloVista {
+		private static Scanner scan = new Scanner(System.in);
+	public void añadirArticulo() {
+		String select;
+		boolean exit = false;
+		int stock;
+		double precio;
+	do {
+		System.out.println("Seleccione el tipo de articulo"
+				+ "\n1/Planta" + "\n2/Maceta");
+		select = scan.nextLine();
+		
+		} while(exit != true);
+	}
+	
+	public void borrarArticulo() {
+		
+	}
+	
+	public void modificarArticulo() {
+		
+	}
+	
+	public void listarArticulos() {
+		
+	}
+	
+	public void resumenTickets() {
+		
+	}
+	
+	public void articulosMasVendidos() {
+		
+	}
+}

@@ -1,0 +1,94 @@
+import java.util.Scanner;
+public class Practica1 {
+	public static void main(String[] args) {
+		char select = '0';
+		Scanner scan = new Scanner(System.in);
+		boolean exit = false;
+		 do{
+			System.out.println("Menú principal, elija una opción:");
+			System.out.println("1: Números perfecos");
+			System.out.println("2: Comparación de números");
+			System.out.println("0: Cerrar el programa");
+			select = scan.next().charAt(0);
+			if(select == '1' && select == '2' && select =='0') {
+				exit = true;
+			}
+			/*else if(select == '2') {
+				exit = true;
+			}
+			else if(select == '0') {
+				exit = true;
+			}*/
+			if(select != '1' && select != '2' && select != '0') {
+			System.out.println("Opción no válida");	
+			}	
+			}while (exit == false);
+		
+		switch (select) {
+		case '1':
+			System.out.println("Ha elegido Números perfectos");
+			int x;
+			int suma = 0;
+			int y;
+			System.out.println("Introduzca un número");
+			System.out.println("Pulse 0 para salir");
+			x = scan.nextInt();
+			if(x < 0) {
+				System.out.println("El numero introducido es negativo, se tratara como positivo.");
+				x = x * -1;
+			}
+			if(x == 0) {
+				System.out.println("Cerrando el programa");
+				break;
+			}
+			y = x / 2;
+			for (int i = 1; i <= y; i++) {
+				if (x % i == 0) {
+					suma = suma + i;
+				}
+			}
+			if (suma == x) {
+				System.out.println("El número " + x + " es perfecto");
+			} else {
+				System.out.println("El número " + x + " no es perfecto");
+			}
+			break;
+		case '2':
+			System.out.println("Ha elegido comparación de números");
+			int a;
+			int b;
+			System.out.println("Introduzca un número positivo");
+			System.out.println("Pulse 0 para salir");
+			a = scan.nextInt();
+			b = a;
+			while (a < 0) {
+				System.out.println("El número introducido debe ser positivo");
+				System.out.println("Introduzca un número positivo");
+				System.out.println("Pulse 0 para salir");
+				a = scan.nextInt();
+			}
+			while (a != 0) {
+				System.out.println("Introduzca un número positivo");
+				System.out.println("Pulse 0 para salir");
+				a = scan.nextInt();
+				if (a < 0) {
+					System.out.println("El número debe ser positivo");
+				} else if (a < b) {
+					System.out.println("El número es menor que el anteiror");
+					b = a;
+				} else if (a > b) {
+					System.out.println("El número es mayor que el anterior");
+					b = a;
+				} else if (a == b) {
+					System.out.println("El número es igual al anterior");
+				}
+			}
+			if (a == 0) {
+				System.out.println("Saliendo del programa");
+			}
+		case '0':
+			System.out.println("Cerrando el programa.");
+		}
+		scan.close();
+	}
+}

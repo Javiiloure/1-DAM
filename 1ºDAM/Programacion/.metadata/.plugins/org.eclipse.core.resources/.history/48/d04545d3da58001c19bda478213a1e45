@@ -1,0 +1,102 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class JavierLoureiroP3PRO {
+	static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String select;
+		boolean exit = false;
+		do {
+			System.out.println("Menú principal, seleccione una opción: \n" + "1/ Buscador de elemento en vector \n"
+					+ "2/ Punto silla \n" + "3/ Nombre y Apellidos \n" + "0/ Salir del programa");
+			select = scan.next();
+			switch (select) {
+			case "1":
+				int tamaño_vector;
+				int vector[];
+				int elemento;
+				int posicion;
+				System.out.println("Ha seleccionado búsqueda de elemento.");
+				System.out.println("Introduzca el número de elementos del vector: ");
+				tamaño_vector = scan.nextInt();
+				vector = new int[tamaño_vector];
+				System.out.println("Introduzca el elemento a buscar: ");
+				elemento = scan.nextInt();
+				posicion = busqueda_elemento(vector, elemento);
+				System.out.println("La primera posición del elemento en el vector es " + posicion);
+			case "2":
+				int tamaño_matriz;
+				int matriz[][];
+				int x;
+				int y;
+				boolean punto_silla;
+				System.out.println("Ha selecionado punto silla.");
+				System.out.println("Introduzca el numero de elementos por filas y columnas de la matriz:");
+				tamaño_matriz = scan.nextInt();
+				matriz = new int[tamaño_matriz][tamaño_matriz];
+				System.out.println("Introduzca la fila del elemento a comprobar: ");
+				x = scan.nextInt();
+				System.out.println("Introduzca la columna del elemento a comprobar");
+				y = scan.nextInt();
+				punto_silla = punto_silla(matriz, x, y, tamaño_matriz);
+				if (punto_silla == true) {
+					System.out.println("El elemento es punto silla.");
+				} else {
+					System.out.println("El elemento n es punto silla.");
+				}
+			case "3":
+			case "0":
+				exit = true;
+			}
+		} while (exit != true);
+
+	}
+
+	public static int busqueda_elemento(int vector[], int elemento) {
+		int posicion = -1;
+		Random rdn = new Random();
+		for (int i = 0; i < vector.length; i++) {
+			vector[i] = rdn.nextInt(100 - 1);
+		}
+		for (int i = 0; i < vector.length; i++) {
+			if (vector[i] == elemento) {
+				posicion = i;
+				break;
+			}
+		}
+		for (int i = 0; i < vector.length; i++) {
+			System.out.println(vector[i]);
+		}
+		return posicion;
+	}
+	public static boolean punto_silla (int matriz[][], int x, int y, int tamaño) {
+		boolean punto_silla;
+		int aux_fila = 0;
+		int aux_columna = 0;
+		Random rdn = new Random();
+		for (int i = 0; i < tamaño; i++) {
+			
+			for (int o = 0; o < tamaño; o++) {
+				matriz[i][o] = rdn.nextInt();
+				System.out.println(matriz[i][o]);
+			}
+		}
+		for (int i = 0; i < tamaño; i++) {
+			if(matriz[i][y] < matriz[x][y]) {
+				aux_columna = i;
+			}
+		}
+		for (int i = 0; i < tamaño; i++) {
+			if(matriz[x][i] > matriz[x][y]) {
+				aux_fila = i;
+			}
+		}
+		if(aux_fila < matriz[x][y] && aux_columna > matriz[x][y]) {
+			punto_silla = true;
+		} else {
+			punto_silla = false;
+		}
+		return punto_silla;
+	}
+}

@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+/*	Ejercicio 1
+ * import java.util.Scanner;
+public class Ejercicio1 {
+	public static void main(String[] args) {
+				
+				Scanner scan = new Scanner(System.in); //Crea un escaner para leer datos por teclado
+				System.out.print("Introduzca los grados Fahrenheit: ");
+				float far = scan.nextFloat();
+				scan.close(); //Cuando el escaner no se use mas se cierra
+				float cel = (5f/9f) * (far-32f);
+				System.out.println("Grados celsius: " + cel);
+			}
+		}*/
+
+/*Ejercicio2
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+		
+		double pi = 3.141592;
+		float radio;
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca el valor del radio: ");
+		radio = scan.nextFloat();
+		scan.close();
+		
+		double area = 4*pi*Math.pow(radio, 2);
+		System.out.println("El valor del area es: " + area);
+		
+		double volumen = (4*pi*Math.pow(radio, 3))/3;
+		System.out.println("El valor del volumen es: " + volumen);
+	}
+}
+*/
+
+/* Ejercicio3
+import java.util.Scanner;
+public class Ejercicio3	{
+
+	public static void main(String[] args) {
+		
+		int nota=0;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduce el valor de la nota(entero):");
+		nota = scan.nextInt();
+		
+		while(nota > 10||nota<0){
+			System.out.println("Introduce una nota válida");
+			nota = scan.nextInt();
+			}
+		scan.close();
+		
+		switch(nota){
+			case 0:
+			case 1: 
+			case 2: 
+			case 3: 
+			case 4: 
+				System.out.println("Insuficiente");
+				break;
+			case 5:
+				System.out.println("Suficiente");
+				break;
+			case 6:
+				System.out.println("Bien");
+				break;
+			case 7:
+			case 8:
+				System.out.println("Notable");
+				break;
+			case 9:
+			case 10:
+				System.out.println("Sobresaliente");
+				break;
+		}	
+	}
+}
+*/

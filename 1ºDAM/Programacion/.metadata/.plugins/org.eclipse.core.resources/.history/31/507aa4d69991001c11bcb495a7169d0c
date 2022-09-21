@@ -1,0 +1,57 @@
+
+public class Direccion {
+	private String ciudad;
+	private String via;
+	private int numero;
+	private int piso;
+	private char letra;
+	private int cp;
+	
+	public String getCiudad() {
+		return ciudad;
+	}
+	
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+	
+	public String getVia() {
+		return via;
+	}
+	
+	public void setVia(String via) {
+		this.via = via;
+	}
+	
+	public int getNumero() {
+		return numero;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public int getPiso() {
+		return piso;
+	}
+	
+	public void setPiso(int piso) {
+		this.piso = piso;
+	}
+	
+	public char getLetra() {
+		return letra;
+	}
+	
+	public void setLetra(char letra) {
+		this.letra = letra;
+	}
+	
+	public int getCp() {
+		return cp;
+	}
+	
+	public void setCp(int cp) {
+		this.cp = cp;
+	}
+}

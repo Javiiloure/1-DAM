@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JavierLoureiroP6PRO/src/main.java&apos; to &apos;NetLogger.java&apos;" description="Rename resource &apos;main.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.java" name="NetLogger.java" stamp="1652614879401" updateReferences="true"/>
+</session>

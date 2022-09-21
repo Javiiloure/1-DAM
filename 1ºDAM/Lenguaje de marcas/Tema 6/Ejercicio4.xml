@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book category="COOKING">
+        <title lang="en">Everyday Italian</title>
+        <author>Giada De Laurentiis</author>
+        <year>2005</year>
+        <price>30.00</price>
+    </book>
+    <book category="CHILDREN">
+        <title lang="en">Harry Potter</title>
+        <author>J K. Rowling</author>
+        <year>2005</year>
+        <price>29.99</price>
+    </book>
+    <book category="WEB">
+        <title lang="en">XQuery Kick Start</title>
+        <author>James McGovern</author>
+        <author>Per Bothner</author>
+        <author>Kurt Cagle</author>
+        <author>James Linn</author>
+        <author>Vaidyanathan Nagarajan</author>
+        <year>2003</year>
+        <price>49.99</price>
+    </book>
+    <book category="WEB">
+        <title lang="en">Learning XML</title>
+        <author>Erik T. Ray</author>
+        <year>2003</year>
+        <price>39.95</price>
+    </book>
+
+<!-- CONSULTAS XQUERY-->
+<!-- Mostrar los títulos de los libros con la etiqueta "titulo". 
+    for $titulo in /bookstore/book
+    where $titulo/title
+    order by $titulo/title
+    return $titulo/title-->
+
+<!-- Mostrar los libros cuyo precio sea menor o igual a 30. Primero
+incluyendo la condición en la cláusula "where" y luego en la ruta del
+XPath.
+    for $libro in /bookstore/book
+    where $libro/price <= 30
+    return $libro
+
+    for $libro in /bookstore/book[price <= 30]
+    return $libro/title
+-->
+
+<!-- Mostrar sólo el título de los libros cuyo precio sea menor o igual a 30.
+    for $libro in /bookstore/book
+    where $libro/price <= 30
+    return $libro
+-->
+
+<!-- Mostrar sólo el título sin atributos de los libros cuyo precio sea menor o
+igual a 30.
+    for $libro in /bookstore/book
+    where $libro/price <= 30
+    return $libro
+-->
+
+<!-- Mostrar el título y el autor de los libros del año 2005, y etiquetar cada
+uno de ellos con "lib2005".
+    for $libro in /bookstore/book
+    where $libro/year = 2005
+    return <lib2005>{$libro/title/text(),", ", $libro/author/text()}</lib2005>
+-->
+
+<!-- Mostrar los años de publicación, primero con "for" y luego con "let" para
+comprobar la diferencia entre ellos. Etiquetar la salida con
+"publicacion".
+    for $libro in /bookstore/book
+    where $libro/year
+    return <publicacion>{$libro/year}</publicacion>
+
+    let $year := /bookstore/book/year
+    return <publicacion>{$year}</publicacion>
+-->
+
+<!-- Mostrar los libros ordenados primero por "category" y luego por "title"
+en una sola consulta.
+    for $libro in /bookstore/book
+    order by $libro/@category, $libro/tittle
+    return $libro/title
+-->
+
+<!-- Mostrar cuántos libros hay, y etiquetarlos con "total".
+
+-->
+
+<!-- Mostrar los títulos de los libros y al final una etiqueta con el número
+total de libros.-->
+
+<!-- Mostrar el precio mínimo y máximo de los libros.-->
+
+<!-- Mostrar el título del libro, su precio y su precio con el IVA incluido, cada
+uno con su propia etiqueta. Ordénalos por precio con IVA.-->
+
+<!-- Mostrar la suma total de los precios de los libros con la etiqueta "total".-->
+
+<!-- Mostrar cada uno de los precios de los libros, y al final una nueva
+etiqueta con la suma de los precios.-->
+
+<!-- Mostrar el título y el número de autores que tiene cada título en
+etiquetas diferentes.-->
+
+<!-- Mostrar en la misma etiqueta el título y entre paréntesis el número de
+autores que tiene ese título.-->
+
+<!-- Mostrar los libros escritos en años que terminan en "3".-->
+
+<!-- Mostrar los libros cuya categoría empiece por "C".-->
+
+<!-- Mostrar los libros que tengan una "X" mayúscula o minúscula en el
+título ordenados de manera descendente.-->
+
+<!-- Mostrar el título y el número de caracteres que tiene cada título, cada
+uno con su propia etiqueta.-->
+
+<!-- Mostrar todos los años en los que se ha publicado un libro eliminando
+los repetidos. Etiquetalos con "año".-->
+
+<!-- Mostrar todos los autores eliminando los que se repiten y ordenados
+por el número de caracteres que tiene cada autor.-->
+
+<!-- Mostrar los títulos en una tabla de HTML.-->
+</bookstore>

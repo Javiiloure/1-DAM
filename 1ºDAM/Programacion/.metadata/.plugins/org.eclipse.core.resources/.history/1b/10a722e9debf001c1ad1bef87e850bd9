@@ -1,0 +1,6 @@
+import java.io.File;
+public class Tema6 {
+ public static void main (String[] args) {
+	 File prueba = new File(Prueba);
+ }
+}

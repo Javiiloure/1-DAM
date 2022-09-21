@@ -1,0 +1,9 @@
+package Ejer5;
+public class Almacen {
+	private Bebida [][] estanteria;
+	
+	public Almacen(int filas, int columnas) {
+		estanteria = new Bebida [filas] [columnas];
+	}
+	
+}

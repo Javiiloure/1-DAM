@@ -1,0 +1,5 @@
+package Ejer5;
+
+public class Azucarada extends Bebida {
+
+}

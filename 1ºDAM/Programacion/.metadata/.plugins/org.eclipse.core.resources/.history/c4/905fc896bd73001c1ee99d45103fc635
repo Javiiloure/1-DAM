@@ -1,0 +1,24 @@
+public class Cuenta {
+	String nombre;
+	String num_cuenta;
+	double tipo_interes;
+	double saldo;
+	
+	public Cuenta() {
+		this.nombre = "";
+		this.num_cuenta = "";
+		this.tipo_interes = 0;
+		this.saldo = 0;
+	}
+	
+	public Cuenta (String nombre, String num_cuenta, double tipo_interes, double saldo) {
+		this.nombre = nombre;
+		this.num_cuenta = num_cuenta;
+		this.tipo_interes = tipo_interes;
+		this.saldo = saldo;
+	}
+}
+
+public String getnombre () {
+	return nombre;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone = "no"?>
+<!DOCTYPE album SYSTEM "albumes.dtd">
+<album ident="El_Madrileño">
+    <titulo>El madrileño</titulo>
+    <artista>C.Tangana</artista>
+    <discografica></discografica>
+    <productores></productores>
+    <n_canciones></n_canciones>
+    <duracion></duracion>
+    <f_publicacion></f_publicacion>
+    <generos></generos>
+    <precio></precio>
+    <caratula></caratula>
+    <cancion>
+    	<titulo_cancion></titulo_cancion>
+    	<duracion_cancion></duracion_cancion>
+    	<posicion></posicion>
+    	<colaboracion></colaboracion>
+    	<artistas></artistas>
+    	<generos_cancion></generos_cancion>
+    	<letristas></letristas>
+    </cancion>
+</album>

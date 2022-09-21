@@ -1,0 +1,225 @@
+import java.util.Scanner;
+
+/*  //Ejercicio1
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		
+		int a;
+		int b;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca un valor a: ");
+		a = scan.nextInt();
+		
+		System.out.println("Introduzca un valor b: ");
+		b = scan.nextInt();
+		scan.close();
+		cambio(a , b);
+	}
+	
+	public static void cambio(int a, int b) {
+		
+		int aux;
+		aux = a;
+		a = b;
+		b = aux;
+		System.out.println("Valor a = " + a);
+		System.out.println("Valor b = " + b);	
+	}
+}
+*/
+
+/* //Ejercicio 2
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		int a;
+		int b;
+		int c;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca valor a: ");
+		a = scan.nextInt();
+		System.out.println("Introduzca valor b: ");
+		b = scan.nextInt();
+		System.out.println("Introduzca valor c: ");
+		c = scan.nextInt();
+		scan.close();
+		System.out.println("El mayor valor es " + mayor(a, b, c));
+	}
+
+	public static int mayor(int a, int b, int c) {
+		if (a >= b && a >= c) {
+			return a;
+		} else if (b >= a && b >= c) {
+			return b;
+		} else {
+			return c;
+		}
+	}
+}
+*/
+
+/* //Ejercicio3
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		int prec;
+		double e;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca la precisión: ");
+		prec = scan.nextInt();
+		while (prec < 0) {
+			System.out.println("Introduzca un positivo: ");
+			prec = scan.nextInt();
+		}
+		scan.close();
+		e = exp(prec);
+		System.out.println(e);
+	}
+
+	public static double exp(int a) {
+		double x = 1;
+		double aux;
+		for (int i = 1; i < a; i++) {
+			aux = factorial(i);
+			x = x + 1 / aux;
+		}
+		return x;
+	}
+
+	public static double factorial(int b) {
+		double fact = 1;
+		for (int i = b; i > 1; i--) {
+			fact = fact * i;
+		}
+		return fact;
+	}
+}
+*/
+
+/*
+//Ejercicio4a
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		int cont;
+		char x;
+		String cad;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca un carácter:");
+		x = scan.next().charAt(0);
+		System.out.println("Introduce una secuencia de caracteres:");
+		cad = scan.next();
+		scan.close();
+		cont = recuento(x, cad);
+		System.out.println("El caracter " + x + " se repite " + cont + " veces");
+	}
+
+	public static int recuento(char a, String b) {
+		int cont = 0;
+		for (int i = 0; i < b.length(); i++) {
+			if (b.charAt(i) == '.') {
+				return cont;
+			}
+			if (b.charAt(i) == a) {
+				cont++;
+			}
+		}
+		return cont;
+	}
+}
+*/
+
+/*
+//Ejercicio4b
+public class Tema2{
+	public static void main(String arg){
+		char x;
+		
+	}
+}
+*/
+
+/*
+//Ejercicio5
+public class Tema2 {
+	public static void main(String[] args) {
+		int x;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca un entero: ");
+		x = scan.nextInt();
+		scan.close();
+		x = inversión(x);
+		System.out.println("El número invertido es: " + x);
+	}
+
+	public static int inversión(int a) {
+		String rev = "";
+		String num = Integer.toString(a);
+		for (int i = num.length(); i < 0; i--) {
+			rev += num.charAt(i);
+		}
+		a = Integer.parseInt(rev);
+		return a;
+	}
+}
+*/
+
+/*
+//Ejercicio6
+public class Tema2 {
+	public static void main(String[] args) {
+		int a;
+		int b;
+		boolean amistad;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca un primer número: ");
+		a = scan.nextInt();
+		System.out.println("Introduzca un segundo número: ");
+		b = scan.nextInt();
+		scan.close();
+		amistad = amigos(a, b);
+		if(amistad == true) {
+			System.out.println("Los números " + a + " y " + b + " son amigos.");
+		}
+		else if(amistad == false) {
+			System.out.println("Los números " + a + " y " + b + " no son amigos.");
+		}
+	}
+
+	public static boolean amigos(int a, int b) {
+		int sum1 = 0;
+		int sum2 = 0;
+		boolean amistad = false;
+		for (int i = 1; i < a; i++) {
+			if (a % i == 0) {
+				sum1 += i;
+			}
+		}
+		if(b != sum1) {
+			return amistad;
+		}
+		for (int i = 1; i < b; i++) {
+			if (b % 2 == 0) {
+				sum2 += i;
+			}
+		}
+		if (sum1 == b && sum2 == a) {
+			amistad = true;
+		}
+		return amistad;
+	}
+}
+*/
+
+//Ejercicio10
+	public class Tema2 {
+		
+		
+		
+	}
+	}

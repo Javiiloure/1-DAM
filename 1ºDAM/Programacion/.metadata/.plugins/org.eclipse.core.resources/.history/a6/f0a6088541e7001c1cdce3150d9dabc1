@@ -1,0 +1,97 @@
+package vista;
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class ArticuloVista {
+	private static Scanner scan = new Scanner(System.in);
+	
+	public static void añadirArticulo() {
+		String select;
+		boolean exit = false;
+		int stock;
+		double precio = 0;
+		DecimalFormat df = new DecimalFormat("#.00");
+		df.format(precio);
+		do {
+			System.out.println("Seleccione el tipo de articulo" + "\n1/Planta" + "\n2/Maceta");
+			select = scan.nextLine();
+			switch (select) {
+			case "1":
+				String nombre_planta;
+				String nombre_cientifico;
+				boolean flor;
+				String caracteristicas_regadio;
+				System.out.println("Introduzca el nombre de la planta: ");
+				nombre_planta = scan.nextLine();
+				System.out.println("Introduzca el nombre cientifico: ");
+				nombre_cientifico = scan.nextLine();
+				while(exit != true) {
+					System.out.println("Indique si es o no una flor:" + "\n1/Es una flor " + "\n2/No es un a flor");
+					select = scan.next();
+					if (select == "1") {
+						flor = true;
+						exit = true;
+					} else if (select == "2") {
+						flor = false;
+						exit = true;
+					} else {
+						System.out.println("Seleccione una opción válida.");
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca las características de regadío(100 char max):");
+					caracteristicas_regadio = scan.nextLine();
+					if (caracteristicas_regadio.length() > 100) {
+						System.out.println("Se ha excedido la longitud permitida, introduzca una descripción más corta.");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca el stock del articulo");
+					stock = scan.nextInt();
+					if (stock < 0) {
+						System.out.println("El stock no puede ser negativo");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Intorduzca el precio del articulo");
+					precio = scan.nextDouble();
+					if(precio < 0) {
+						System.out.println("El precio no puede ser negativo");
+					} else {
+						exit = true;
+					}
+				}
+			case "2":
+			default:
+				System.out.println("Seleccione una opcion valida.");
+			}
+		} while (exit != true);
+	}
+
+	public void borrarArticulo() {
+
+	}
+
+	public void modificarArticulo() {
+
+	}
+
+	public void listarArticulos() {
+
+	}
+
+	public void resumenTickets() {
+
+	}
+
+	public void articulosMasVendidos() {
+
+	}
+}

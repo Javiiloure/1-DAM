@@ -1,0 +1,36 @@
+package vista;
+import modelo.Articulo;
+import java.util.Scanner;
+
+public class Main {
+	private static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String select;
+		boolean exit = false;
+		ArticuloVista articulo = new ArticuloVista();
+		
+		articulo.añadirArticulo();
+		do {
+			System.out.println("Bienvenido a Floristería, seleccione una opción: \n" + "1/Añadir nuevos articulos \n"
+					+ "2/Borrar articulos existentes \n" + "3/Modificar articulos existentes \n"
+					+ "4/Listar los articulos \n" + "5/Ver resumen de los tickets \n"
+					+ "6/Ver resumen de los articulos más vendidos \n" + "0/Salir del programa");
+			select = scan.nextLine();
+			switch(select) {
+				case"1": 
+					ArticuloVista.añadirArticulo();
+				case"2":
+				case"3":
+				case"4":
+				case"5":
+				case"6":
+				case"0":
+					exit = true;
+					break;
+				default: System.out.println("Seleccione una opción válida");
+			}
+
+		} while (exit != true);
+	}
+}

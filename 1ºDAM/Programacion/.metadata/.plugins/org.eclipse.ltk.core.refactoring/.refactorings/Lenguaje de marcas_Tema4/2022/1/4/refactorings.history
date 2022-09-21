@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Lenguaje de marcas_Tema4/DTD/Ejercicio1.dtd&apos; to &apos;Ejercicio1.xml&apos;" description="Rename resource &apos;Ejercicio1.dtd&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="DTD/Ejercicio1.dtd" name="Ejercicio1.xml" stamp="1643020690237" updateReferences="true"/>
+</session>

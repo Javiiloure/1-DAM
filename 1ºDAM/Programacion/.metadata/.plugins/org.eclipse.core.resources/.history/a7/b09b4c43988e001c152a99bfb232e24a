@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class Piso {
+	private static int idActual = 0;
+	int id;
+	String direccion;
+	int m2;
+	double precio;
+	private Scanner scan = new Scanner(System.in);
+
+	public Piso() {
+		this.id = idActual++;
+		this.direccion = "";
+		this.m2 = 0;
+		this.precio = 0;
+	}
+
+	public Piso(String direccion, int m2, double precio) {
+		this.direccion = direccion;
+		this.m2 = m2;
+		this.precio = precio;
+		this.id = idActual++;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getM2() {
+		return m2;
+	}
+
+	public void setM2(int m2) {
+		this.m2 = m2;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+//	@Override
+//	public int hashCode() {
+//	    int hash = 7;
+//	    hash = 31 * hash + (direccion == null ? 0 : direccion.hashCode());
+//	    hash = 31 * hash + (int) precio;
+//	    hash = 31 * hash + (int) m2;
+//	    return hash;
+//	}
+}

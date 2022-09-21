@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="reservas">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="reserva_habitación" minOccurs="1" maxOccurs="unbounded" />
+				<xsd:element ref="reserva_salón" minOccurs="1" maxOccurs="unbounded" />
+				<xsd:element ref="cliente" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="cliente">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="nombre" type="xsd:string" minOccurs="0" />
+				<xsd:element name="apellidos" type="xsd:string" minOccurs="0" />
+				<xsd:element name="móvil" type="movil" minOccurs="0" />
+				<xsd:element name="empleado" type="empelado" minOccurs="0" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="ID_Cliente" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="reserva_habitación">
+		<xsd:complexType>
+			<xsd:group ref="reserva" />
+			<xsd:attributeGroup ref="atributos_habitacion" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="reserva_salón">
+		<xsd:complexType>
+			<xsd:group ref="reserva" />
+			<xsd:attribute name="cliente" type="ID_Cliente" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="fechaEntrada">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="fecha" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="fechaSalida">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="fecha" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- Definicion de grupos-->
+	<xsd:group name="reserva">
+		<xsd:sequence>
+			<xsd:element ref="fechaEntrada" />
+			<xsd:element ref="fechaSalida" />
+			<xsd:element name="observaciones" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:attributeGroup name="atributos_habitacion">
+		<xsd:attribute name="cliente" type="ID_Cliente" />
+		<xsd:attribute name="opciones" type="xsd:string" />
+		<xsd:attribute name="tipoHabitación" type="xsd:string" />
+	</xsd:attributeGroup>
+
+	<xsd:attributeGroup name="fecha">
+		<xsd:attribute name="año" type="xsd:integer" />
+		<xsd:attribute name="mes" type="mes" />
+		<xsd:attribute name="día" type="dia" />
+	</xsd:attributeGroup>
+
+	<xsd:simpleType name="empelado">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="E[0-9]_[0-9]" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!--Tipos de datos simples -->
+	<xsd:simpleType name="ID_Cliente">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="C_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="mes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Enero" />
+			<xsd:enumeration value="Febrero" />
+			<xsd:enumeration value="Marzo" />
+			<xsd:enumeration value="Abril" />
+			<xsd:enumeration value="Mayo" />
+			<xsd:enumeration value="Junio" />
+			<xsd:enumeration value="Julio" />
+			<xsd:enumeration value="Agosto" />
+			<xsd:enumeration value="Septiembre" />
+			<xsd:enumeration value="Octubre" />
+			<xsd:enumeration value="Noviembre" />
+			<xsd:enumeration value="Diciembre" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="dia">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1" />
+			<xsd:maxInclusive value="31" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="movil">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minExclusive value="100000000" />
+			<xsd:maxInclusive value="999999999" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

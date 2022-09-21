@@ -1,0 +1,20 @@
+import java.sql.*;
+public class ProyectoFinal {
+	private static final String URL = "jdbc:mysql://localhost:3307/Floristeria";
+	private static final String USER = "root";
+	private static final String PASS = "admin";
+	
+	public static void main (String[] args) {
+		Connection conexion = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conexion = DriverManager.getConnection(URL, USER, PASS);
+		}
+		catch(ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

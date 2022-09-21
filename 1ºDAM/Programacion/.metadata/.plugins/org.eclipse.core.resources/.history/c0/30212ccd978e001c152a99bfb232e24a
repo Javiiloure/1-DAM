@@ -1,0 +1,116 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Agencia {
+	ArrayList<Piso> pisos = new ArrayList<Piso>();
+	String nombre;
+	public Scanner scan = new Scanner(System.in);
+
+	public Agencia() {
+		this.nombre = "";
+	}
+
+	public Agencia(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Agencia(String nombre, ArrayList<Piso> pisos) {
+		this.nombre = nombre;
+		this.pisos = pisos;
+	}
+
+	public ArrayList<Piso> getPisos() {
+		return pisos;
+	}
+
+	public void setPisos(ArrayList<Piso> pisos) {
+		this.pisos = pisos;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void añadirPiso() {
+		String direccion;
+		int m2;
+		double precio;
+		boolean exit = false;
+		System.out.println("Ha elegido añadir un nuevo piso.");
+		System.out.println("Introduzca la direccion:");
+		direccion = scan.next();
+		do {
+			System.out.println("Introduzca el tamaño(m2):");
+			m2 = scan.nextInt();
+			if (m2 < 0) {
+				System.out.println("El tamaño debe ser un numero positivo.");
+			} else {
+				exit = true;
+			}
+		} while (exit != true);
+		exit = false;
+		do {
+			System.out.println("Introduzca el precio:");
+			precio = scan.nextDouble();
+			if (precio < 0) {
+				System.out.println("El precio debe ser un numero positivo.");
+			} else {
+				exit = true;
+			}
+		} while (exit != true);
+		pisos.add(new Piso(direccion, m2, precio));
+	}
+
+	public void modificarPiso() {
+		int id;
+		int i;
+		boolean exit = false;
+		String select;
+		System.out.println("Ha elegido modificar un piso.");
+		do {
+			System.out.println("Introduzca el id del piso a modificar.");
+			id = scan.nextInt();
+			for (i = 0; i < pisos.size(); i++) {
+				if (pisos.get(i).id == id) {
+					exit = true;
+					break;
+				}
+				if (i == pisos.size()) {
+					System.out.println("No se ha encontrado el id introducido.");
+				}
+			}
+		} while (exit != true);
+		exit = false;
+		do {
+			System.out.println("Seleccione un apartado a modificar:" + "\n1/Direccion" + "\n2/Tamaño" + "\n3/Precio"
+					+ "\n0/Volver al menu principal.");
+			select = scan.next();
+			switch (select) {
+			case "1":
+				String direccion;
+				System.out.println("Introduzca la nueva direccion:");
+				direccion = scan.next();
+				pisos.get(i).setDireccion(direccion);
+			case "2":
+				int m2;
+				System.out.println("Introduzca el nuevo tamaño:");
+				m2 = scan.nextInt();
+				pisos.get(i).setM2(m2);
+			case "3":
+				double precio;
+				System.out.println("Introduzca el nuevo precio:");
+				precio = scan.nextDouble();
+				pisos.get(i).setPrecio(precio);
+			case "0":
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opción válida.");
+			}
+		} while (exit != true);
+	}
+}

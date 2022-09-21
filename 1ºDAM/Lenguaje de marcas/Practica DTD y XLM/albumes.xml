@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1" ?>
+<tienda_musica  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="albumes.xsd">
+<album id="1" formato="Digital" discografica="Sony Music España">
+    <titulo>El madrileño</titulo>
+    <artista>C.Tangana</artista>
+    <productores>C.Tangana</productores>
+    <productores>Victor Martinez</productores>
+    <productores>Rafael Alcaute</productores>
+    <n_canciones>14</n_canciones>
+    <duracion>00:42:31</duracion>
+    <f_publicacion>26/02/2021</f_publicacion>
+    <generos>Urbano Latino</generos>
+    <generos>Pop</generos>
+    <precio>14.99</precio>
+    <caratula></caratula>
+    <cancion>
+    	<titulo_cancion>Demasiadas Mujeres</titulo_cancion>
+    	<duracion_cancion>00:02:34</duracion_cancion>
+    	<posicion>1</posicion>
+    	<colaboracion>No</colaboracion>
+    	<generos_cancion>Urbano Latino</generos_cancion>
+    	<letristas>C.Tangana</letristas>
+    </cancion>
+    <cancion>
+    	<titulo_cancion>Tu me dejaste de querer</titulo_cancion>
+    	<duracion_cancion>00:03:19</duracion_cancion>
+    	<posicion>2</posicion>
+    	<colaboracion>Si</colaboracion>
+    	<artistas>C.Tangana</artistas>
+    	<artistas>La Hungara</artistas>
+    	<artistas>Niño de Elche</artistas>
+    	<generos_cancion>Pop latino</generos_cancion>
+    	<generos_cancion>Flamenco</generos_cancion>
+    	<generos_cancion>Rumba</generos_cancion>
+    	<letristas>C.Tangana</letristas>
+    	<letristas>La Hungara</letristas>
+    	<letristas>Niño de Elche</letristas>
+    </cancion>
+    <cancion>
+    	<titulo_cancion>Comerte entera</titulo_cancion>
+    	<duracion_cancion>00:02:55</duracion_cancion>
+    	<posicion>3</posicion>
+    	<colaboracion>No</colaboracion>
+    	<generos_cancion>Pop</generos_cancion>
+    	<letristas>C.Tangana</letristas>    	
+    </cancion>
+</album>
+
+<album id="2" formato="CD" discografica="Guayaba Records">
+		<titulo>Handmade</titulo>
+		<artista>Craneo</artista>
+		<productores>CG</productores>
+		<productores>Mr.Mrcs</productores>
+		<n_canciones>8</n_canciones>
+		<duracion>00:22:04</duracion>
+		<f_publicacion>2014</f_publicacion>
+		<generos>Rap</generos>
+		<precio>3.99</precio>
+		<caratula>https://images.genius.com/663cbc3e59e110a5c95db7fd0b9a6895.1000x1000x1.jpg</caratula>
+		<cancion>
+			<titulo_cancion>Born</titulo_cancion>
+			<duracion_cancion>00:01:23</duracion_cancion>
+			<posicion>1</posicion>
+			<colaboracion>No</colaboracion>
+			<generos_cancion>Rap</generos_cancion>
+			<letristas>Craneo</letristas>
+		</cancion>
+		<cancion>
+			<titulo_cancion>In a tree</titulo_cancion>
+			<duracion_cancion>00:02:57</duracion_cancion>
+			<posicion>2</posicion>
+			<colaboracion>No</colaboracion>
+			<artistas>Craneo</artistas>
+			<generos_cancion>Rap</generos_cancion>
+			<letristas>Craneo</letristas>
+		</cancion>
+		<cancion>
+			<titulo_cancion>Flaco</titulo_cancion>
+			<duracion_cancion>00:02:35</duracion_cancion>
+			<posicion>3</posicion>
+			<colaboracion>No</colaboracion>
+			<generos_cancion>Rap</generos_cancion>
+			<letristas>Craneo</letristas>    	
+		</cancion>
+		<cancion>
+			<titulo_cancion>Clouds(Feat. Mino</titulo_cancion>
+			<duracion_cancion>00:02:45</duracion_cancion>
+			<posicion>4</posicion>
+			<colaboracion>Si</colaboracion>
+			<artistas>Craneo</artistas>
+			<artistas>Mito</artistas>
+			<generos_cancion>Rap</generos_cancion>
+			<letristas>Craneo</letristas> 
+			<letristas>Mito</letristas>  	
+		</cancion>
+		<cancion>
+			<titulo_cancion>Handmade</titulo_cancion>
+			<duracion_cancion>00:03:28</duracion_cancion>
+			<posicion>5</posicion>
+			<colaboracion>No</colaboracion>
+			<generos_cancion>Rap</generos_cancion>
+			<letristas>Craneo</letristas>    	
+		</cancion>
+</album>
+</tienda_musica>

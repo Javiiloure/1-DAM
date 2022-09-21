@@ -1,0 +1,15 @@
+
+public class Lavadora extends Electrodomestico {
+	private int carga;
+	public static final int CARGA_POR_DEFECTO = 5;
+	
+	public Lavadora() {
+		super();
+		this.carga = CARGA_POR_DEFECTO;
+	}
+	
+	public Lavadora(double precio_base, int peso) {
+		super();
+		this.precio_base = precio_base;
+	}
+}

@@ -1,0 +1,4 @@
+
+public class Lavadora extends Electrodomestico {
+	private int carga;
+}

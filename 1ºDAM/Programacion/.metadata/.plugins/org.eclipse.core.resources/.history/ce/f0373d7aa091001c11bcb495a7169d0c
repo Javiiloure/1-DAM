@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class JavierLoureiroP4PRO {
+	static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String select;
+		boolean exit = false;
+		ArrayList<Piso> pisos = new ArrayList<Piso>();
+		pisos.add(new Piso("Calle Zaragoza", 42, 0, 250, false, true));
+		pisos.add(new Piso("Calle Zamora", 50, 120000, 0, true, false));
+		Agencia agencia = new Agencia("agencia", pisos);
+		do {
+			System.out.println("Bienvenido agencia inmobiliaria, seleccione una opción: " + "\n1/Añadir nuevo piso."
+					+ "\n2/Modificar un piso." + "\n3/Listar pisos existentes."
+					+ "\n4/Listar pisos por rango de precios." + "\n5/Listar pisos por rango de tamaño."
+					+ "\n6/Eliminar piso de la lista." + "\n0/Salir del programa.");
+			select = scan.nextLine();
+			switch (select) {
+			case "1":
+				agencia.añadirPiso();
+				break;
+			case "2":
+				agencia.modificarPiso();
+				break;
+			case "3":
+				agencia.listarPisos();
+				break;
+			case "4":
+				agencia.rangoPrecio();
+				break;
+			case "5":
+				agencia.rangoTamaño();
+				break;
+			case "6":
+				agencia.eliminarPiso();
+				break;
+			case "0":
+				System.out.println("Cerrando el programa.");
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opción válida.");
+			}
+		} while (exit != true);
+	}
+}

@@ -1,0 +1,8 @@
+
+public class Tema5 {
+
+	public static void main(String[] args) {
+		Electrodomestico lavadora = new Electrodomestico(370, rojo,'B', 500);
+	}
+
+}

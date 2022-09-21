@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class JavierLoureiroP3PRO {
+	static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String select;
+		boolean exit = false;
+		do {
+			System.out.println("Menú principal, seleccione una opción: \n" + "1/ Buscador de elemento en vector \n"
+					+ "2/ Punto silla \n" + "3/ Nombre y Apellidos \n" + "0/ Salir del programa");
+			select = scan.next();
+			switch (select) {
+			case "1":
+				int tamaño;
+				int vector[];
+				int elemento;
+				int posicion;
+				System.out.println("Introduzca el número de elementos del vector: ");
+				tamaño = scan.nextInt();
+				vector = new int[tamaño];
+				System.out.println("Introduzca el elemento a buscar: ");
+				elemento = scan.nextInt();
+				posicion = busqueda_elemento(vector, elemento);
+				System.out.println("La primera posición del elemento en el vector es " + posicion);
+			case "2":
+			case "3":
+			case "0":
+				exit = true;
+			}
+		} while (exit != true);
+
+	}
+
+	public static int busqueda_elemento(int vector[], int elemento) {
+		int posicion = -1;
+		Random rdn = new Random();
+		for (int i = 0; i < vector.length; i++) {
+			vector[i] = rdn.nextInt(100 - 1);
+		}
+		for (int i = 0; i < vector.length; i++) {
+			if (i == elemento) {
+				posicion = i;
+				break;
+			}
+		}
+		for (int i = 0; i < vector.length; i++) {
+			System.out.println(vector[i]);
+		}
+		return posicion;
+	}
+}

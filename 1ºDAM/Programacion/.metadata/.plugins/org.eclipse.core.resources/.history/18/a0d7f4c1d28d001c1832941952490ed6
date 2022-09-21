@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Piso {
+	int id;
+	String direccion;
+	int m2;
+	double precio;
+	static int generador = 1;
+	public Scanner scan = new Scanner(System.in);
+
+	public Piso() {
+		this.id = generador;
+		generador++;
+		this.direccion = "";
+		this.m2 = 0;
+		this.precio = 0;
+	}
+
+	public Piso(String direccion, int m2, double precio) {
+		this.id = generador;
+		generador++;
+		this.direccion = direccion;
+		this.m2 = m2;
+		this.precio = precio;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccicon(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getM2() {
+		return m2;
+	}
+
+	public void setM2(int m2) {
+		this.m2 = m2;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+}

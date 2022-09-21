@@ -1,0 +1,21 @@
+
+<!ELEMENT  album (titulo, artista, discografica, productores, n_canciones, duracion, f_publicacion, generos, precio, caratula)>
+<!ATTLIST album ident ID #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT artista (#PCDATA)>
+<!ELEMENT discografica (#PCDATA)>
+<!ELEMENT productores (#PCDATA)>
+<!ELEMENT n_canciones (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT f_publicacion (#PCDATA)>
+<!ELEMENT generos (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT caratula (#PCDATA)>
+
+<!ELEMENT cancion (titulo, duracion, posicion, colaboracion, artistas, generos)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT posicion (#PCDATA)>
+<!ELEMENT colaboracion (#PCDATA)>
+<!ELEMENT artistas (#PCDATA)>
+<!ELEMENT generos (#PCDATA)>

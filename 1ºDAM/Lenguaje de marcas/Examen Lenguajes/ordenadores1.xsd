@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="sala">
+        <xs:group ref="sala" />
+    </xs:complexType>
+
+    <xs:simpleType name="numeroOrdenadores">
+        <xs:restriction base="xs:integer">
+            <xs:minExclusive value="20" />
+            <xs:maxInclusive value="40" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:group name="sala">
+        <xs:element name="codigo" type="xs:integer" />
+        <xs:element name="lugar" type="xs:string" />
+        <xs:element name="numOrdenadores" type="numeroOrdenadores" />
+        <xs:attribute name="impresora" type="xs:boolean" use="optional"></xs:attribute>
+    </xs:group>
+	
+	<xs:element name="sistemaOperativo">
+        <xs:complexType>
+            <xs:attribute name="codigo" type="xs:string" />
+        </xs:complexType>
+    </xs:element>
+    
+	<xs:element name="taller" type="sala" />
+
+    <xs:element name="sala" type="sala" />
+</xs:schema>

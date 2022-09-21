@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tema4/src/DNI.java&apos; to &apos;NIF.java&apos;" description="Rename resource &apos;DNI.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DNI.java" name="NIF.java" stamp="1643131112839" updateReferences="true"/>
+</session>

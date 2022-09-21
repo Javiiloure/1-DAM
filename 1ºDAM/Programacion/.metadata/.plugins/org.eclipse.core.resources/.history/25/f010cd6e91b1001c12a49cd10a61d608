@@ -1,0 +1,111 @@
+package examen;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	static ArrayList<Audiovisual> peliculasYseries;
+
+	public static void main(String[] args) {
+		// Parte 1:
+		System.out.println("Comienza la parte 1: ");
+		System.out.println(eliminaEspaciosDuplicados("Esto  es una   prueba  para ver  si   funciona       el método  "));
+
+		System.out.println("Termina la parte 1. ");
+
+		System.out.println("=============================================================================");
+
+		// Parte 2:
+		System.out.println("Comienza la parte 2: ");
+		int matriz[][] = {{45,56,44},{34,67,25},{77,11,12},{13,13,97},{32,32,86}};
+		
+		System.out.println(muestraMatriz(matriz));
+		matriz = ordenInversoMatriz(matriz);
+		System.out.println(muestraMatriz(matriz));
+
+
+		System.out.println("Termina la parte 2. ");
+
+		System.out.println("=============================================================================");
+		// Parte 3:
+		System.out.println("Comienza la parte 3: ");
+		peliculasYseries = new ArrayList<Audiovisual>();
+		Serie[] series = Serie.generadorSeries();
+		Pelicula[] peliculas = Pelicula.generarPeliculas();
+
+		for (Serie s : series) {
+			peliculasYseries.add(s);
+		}
+
+		for (Pelicula p : peliculas) {
+			peliculasYseries.add(p);
+		}
+
+		mostrartodo();
+
+		System.out.println("La pelicula más larga es: " + peliculaMasLarga().toString());
+
+		System.out.println("La serie más corta es: " + serieMasCorta().toString());
+
+		System.out.println("Las peliculas y series del siglo XX son: " + sigloXX());
+
+		System.out.println("Termina la parte 3. ");
+
+	}
+
+
+
+	// Implementar el siguiente método qué recibe una String cómo parámetro y debe
+	// devolverla sin los espacios duplicados.
+	private static String eliminaEspaciosDuplicados(String string) {
+		String x;
+		x = string.replaceAll(" +", " ");
+		return x;
+	}
+	
+	/*Implementar el siguiente método que debe reordenar los elementos de una matriz de mayor a menor, siguiendo el siguiente orden 0,0 menor, 0,1, el siguiente, 0,2, el siguiente,
+	* y así sucesivamente hasta que el elemento N,M sea el menor de todos y el 0,0 el mayor de todos
+	* */
+	private static int[][] ordenInversoMatriz(int[][] matriz) {
+		
+		return null;
+	}
+
+	/*
+	 * Implementar un método que muestre las matrices por pantalla de forma que se vea cada fila en una fila con todos sus elementos y separe dichos elementos por comas y los meta dentro
+	 * de corchetes, y separe también las filas con saltos de línea. 
+	 * 
+	 * Además debe introducir un salto de línea antes y después del muestreo
+	 * */
+	private static String muestraMatriz(int[][] matriz) {
+		System.out.println();
+		for (int x = 0; x < matriz.length; x++) {
+			for (int y = 0; y < matriz[0].length; y ++) {
+				System.out.println("[" + matriz[x][y] + "],");
+			}
+		}
+		System.out.println();
+		return null;
+	}
+
+	// Implementar los siguientes métodos para conseguir un resultado correcto:
+
+	private static String sigloXX() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static Serie serieMasCorta() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static Pelicula peliculaMasLarga() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static void mostrartodo() {
+		// TODO Auto-generated method stub
+	}
+}

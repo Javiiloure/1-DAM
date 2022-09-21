@@ -1,0 +1,97 @@
+package controlador;
+
+import modelo.Planta;
+import modelo.Maceta;
+import vista.Main;
+import java.util.ArrayList;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+
+public class ArticuloController {
+	public static ArrayList<Planta> plantas = new ArrayList<Planta>();
+	public static ArrayList<Maceta> macetas = new ArrayList<Maceta>();
+	
+	public ArticuloController() {
+		plantas = new ArrayList<Planta>();
+		macetas = new ArrayList<Maceta>();
+		try {
+			getArticulos();
+		} catch(SQLException e) {
+			System.out.println("Error en la recuperación de datos.");
+		}
+	}
+	
+	public static void getArticulos() throws SQLException {
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "select *, stock, precio from planta p, articulo a where p.codigo_planta = a.codigo_articulo";
+		ResultSet rs = s.executeQuery(query);
+		plantas.clear();
+		macetas.clear();
+		while(rs.next()) {
+			Planta planta = new Planta(rs.getInt(1), rs.getInt(6), rs.getDouble(7), rs.getString(2), rs.getString(3), rs.getBoolean(4), rs.getString(5));
+			plantas.add(planta);
+		}
+		query = "select *, stock, precio from maceta m, articulo a where m.codigo_maceta = a.codigo_articulo";
+		rs = s.executeQuery(query);
+		while(rs.next()) {
+			Maceta.Color color = Maceta.Color.valueOf(rs.getString(4));
+			Maceta.Material material = Maceta.Material.valueOf(rs.getString(5));
+			Maceta maceta = (new Maceta(rs.getInt(1), rs.getInt(7), rs.getDouble(8), rs.getInt(2), rs.getInt(3), color, material, rs.getBoolean(6)));
+			macetas.add(maceta);
+		}
+	}
+	
+	public static void añadirArticulo(int stock, double precio) throws SQLException {
+		PreparedStatement ps = Main.conexion.getConection().prepareStatement("INSERT INTO articulo (stock, precio) VALUES(?,?)");
+		ps.setInt(1, stock);
+		ps.setDouble(2, precio);
+		ps.executeUpdate();
+		ps.close();
+	}
+	
+	/**
+	 * @param codigo_articulo
+	 * @throws SQLException
+	 */
+	public static void borrarArticulo(int codigo_articulo) throws SQLException {
+		
+		boolean del = false;
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "DELETE FROM articulo WHERE codigo_articulo = " + codigo_articulo + ";";
+		s.executeUpdate(query);
+		query = "DELETE FROM ticket_articulo where codigo_articulo = " + codigo_articulo + ";";
+		s.executeUpdate(query);
+		s.close();
+		for(int i = 0; i < plantas.size(); i++) {
+			if(plantas.get(i).getCodigo_articulo() == codigo_articulo) {
+				plantas.remove(i);
+				PlantaController.borrarPlanta(codigo_articulo);
+				del = true;
+			}
+		}
+		for(int i = 0; i < macetas.size(); i++) {
+			if(macetas.get(i).getCodigo_articulo() == codigo_articulo) {
+				macetas.remove(i);
+				del = true;
+			}
+		}
+		if(del == false) {
+			System.out.println("Codigo de articulo erroneo.");
+		}
+	}
+	
+	public static void listarArticulos() throws SQLException {
+		getArticulos();
+		for(int i = 0; i < plantas.size(); i++) {
+			System.out.println(plantas.get(i).toString());
+		}
+		for(int i = 0 ; i < macetas.size(); i++) {
+			System.out.println(macetas.get(i).toString());
+		}
+	}
+	
+
+}

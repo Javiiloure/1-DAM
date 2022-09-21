@@ -1,0 +1,16 @@
+package controlador;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import vista.Main;
+public class PlantaController  {
+	public static void añadirPlanta() throws SQLException {
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "SELECT codigo_articulo FROM articulo ORDER BY codigo_articuclo DESC LIMIT 1";
+		ResultSet rs = s.executeQuery(query);
+		rs.next();
+		int codigo_articulo = rs.getInt(1);
+		System.out.println(codigo_articulo);
+	}
+}

@@ -1,0 +1,13 @@
+import java.sql.*;
+import java.io.*;
+public class ProyectoFinal {
+	public static void main (String[] args) {
+		Connection conexion = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		}
+		catch(IOException e) {
+			
+		}
+	}
+}

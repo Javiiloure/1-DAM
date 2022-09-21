@@ -1,0 +1,54 @@
+package testpackage;
+import org.junit.jupiter.api.Test;
+
+import MainPackage.Tema2;
+
+import static org.junit.Assert.*;
+
+class Tema2Test {
+
+	@Test
+	void intercambiocambiotest() {
+		int a = Tema2.cuatro;
+		int b = Tema2.siete;
+		Tema2.intercambio(a, b);
+		assertEquals(a, Tema2.cuatro);
+		assertEquals(b, Tema2.siete);		
+	}
+
+
+/*
+	@Test
+	void mayorDeTrestest() {
+		int a = Tema2.a;
+		int b = Tema2.b;
+		int c = Tema2.c;
+		int mayor;
+		mayor = Tema2.mayorNumero();
+		assertEquals(mayor, Tema2.a);
+}
+*/
+	
+/*
+	@Test
+	void  factorialtest() {
+		int x = Tema2.fact;
+		double actual;
+		double esperado = 120.0;
+		actual = Tema2.factorial(x);
+		assertEquals(esperado, actual, 0.1);
+	}
+	
+	@Test
+	void exptest() {
+	
+	}
+
+	
+/*	
+	@Test
+	void recuentotest() {
+		
+	}
+*/	
+}

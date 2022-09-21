@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone = "no"?>
+<!DOCTYPE albumes SYSTEM "albumes.dtd">
+<album ident="1">
+    <titulo>El madrileño</titulo>
+    <artista>C.Tangana</artista>
+</album>

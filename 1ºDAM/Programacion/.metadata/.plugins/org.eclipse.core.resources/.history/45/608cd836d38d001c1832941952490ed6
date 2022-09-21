@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class JavierLoureiroP4PRO {
+	static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String select;
+		boolean exit = false;
+		Agencia agencia = new Agencia();
+		do {
+			System.out.println("Bienvenido agencia inmobiliaria, seleccione una opción: " + "\n1/Añadir nuevo piso."
+					+ "\n2/Modificar un piso." + "\n3/Listar pisos existentes."
+					+ "\n4/Listar pisos por rango de precios." + "\n5/Listar pisos por rango de tamaño."
+					+ "\n6/Eliminar piso de la lista." + "\n0/Salir del programa.");
+			select = scan.next();
+			switch (select) {
+			case "1":
+				Agencia.añadirPiso();
+				break;
+			case "2":
+				Agencia.modificarPiso();
+				break;
+			case "3":
+			case "4":
+			case "5":
+			case "6":
+			case "0":
+				System.out.println("Cerrando el programa.");
+				exit = true;
+				break;
+			default:
+				System.out.println("Seleccione una opción válida.");
+			}
+		} while (exit != true);
+	}
+}

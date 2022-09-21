@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+	public static void main(String[] args[]) {
+
+		char op;
+		int x;
+		int y;
+		int z;
+		boolean fin = false;
+
+		while (fin == false) {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Introduzca el primer número entero: ");
+			x = scan.nextInt();
+			System.out.println("Introduzca la operación");
+			op = scan.next().charAt(0);
+			System.out.println("Introduzca el segundo número entero: ");
+			y = scan.nextInt();
+			scan.close();
+
+			switch (op) {
+
+			case '+':
+				z = x + y;
+				System.out.println("El resultado es: " + z);
+				fin = true;
+				break;
+			case '-':
+				z = x - y;
+				System.out.println("El resultado es: " + z);
+				fin = true;
+				break;
+			case '*':
+				z = x * y;
+				System.out.println("El resultado es: " + z);
+				fin = true;
+				break;
+			case '/':
+				z = x / y;
+				System.out.println("El resultado es: " + z);
+				fin = true;
+				break;
+			case '%':
+				z = x % y;
+				System.out.println("El resultado es: " + z);
+				fin = true;
+				break;
+			default:
+				System.out.println("La operación no es válida");
+				fin = false;
+			}
+		}
+	}
+}

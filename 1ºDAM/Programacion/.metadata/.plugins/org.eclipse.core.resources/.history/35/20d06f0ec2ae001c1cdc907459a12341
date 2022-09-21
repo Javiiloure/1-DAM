@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+public class Agencia {
+
+	private ArrayList<Inmueble> Inmuebles = new ArrayList<Inmueble>();
+	private String nombre; 
+
+	public Agencia (String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public Agencia (String nombre, ArrayList<Inmueble> Inmuebles) {
+		this.nombre = nombre;
+		this.Inmuebles = Inmuebles;
+	}
+}
+

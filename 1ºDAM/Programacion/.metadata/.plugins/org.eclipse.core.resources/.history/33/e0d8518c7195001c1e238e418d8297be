@@ -1,0 +1,9 @@
+
+public class Tema5 {
+
+	public static void main(String[] args) {
+		Electrodomestico lavadora = new Electrodomestico(370, Electrodomestico.colores.rojo, Electrodomestico.consumo_energetico.B, 500);
+		lavadora.comprobarConsumoEnergetico('B');
+	}
+
+}

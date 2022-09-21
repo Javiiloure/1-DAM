@@ -1,0 +1,9 @@
+public class main {
+	public static void main(String[] args) {
+		
+		System.out.println("Menú principal, seleccione una opción válida: "
+				+ "\n1/Año bisiesto"
+				+ "\n2/Combinatorio"
+				+ "\n3/Números perfectos");
+	}
+}

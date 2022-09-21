@@ -1,0 +1,79 @@
+Ejercicios Tema 2
+Utilizando como base el Guión 1: Introducción a Linux, resolver los ejercicios propuestos en esta actividad.
+ 
+
+Ejercicio 1. Partiendo de tu directorio de inicio, realiza cada uno de los siguientes apartados:
+Crea un directorio que cuelgue de tu directorio de inicio.
+Colgando del directorio creado en el paso anterior, crea un fichero mediante el comando cat que contenga los treinta primeros números impares (1, 3, 5,..., 57, 59) (cada uno en una línea distinta).
+ Visualiza las cinco últimas líneas del fichero creado anteriormente.
+ Visualiza las trece primeras líneas del fichero anterior.
+ Visualiza página a página el contenido del fichero creado en el paso b).
+ Visualiza el directorio de trabajo actual y si no corresponde con tu directorio de inicio cámbiate a este.
+ Sin cambiar de directorio, modifica el nombre del fichero creado en el paso b) y dale como nuevo nombre impares.
+Crea otro fichero mediante el comando cat que contenga tu nombre y apellidos en distintas líneas. 
+Mueve este último fichero para que cuelgue del directorio creado en el paso a).
+Crea otro directorio que cuelgue del que se creó en el paso a).
+Haz una copia de los ficheros creados en los pasos b) y h) en el último directorio que has creado.
+Haz que tu directorio de trabajo actual coincida con tu directorio de inicio.
+Desde tu directorio de inicio, visualiza un listado largo y recursivo del directorio creado en el paso a).
+Elimina, pidiendo confirmación, los ficheros que cuelgan del directorio creado en el paso j).
+Desde tu directorio de inicio elimina de forma recursiva el directorio creado en el paso a).
+Consulta en el manual de usuario el comando date determinando el formato que presenta para la hora y fecha. 	
+
+ 
+Ejercicio 2. Partiendo de tu directorio de inicio, realiza cada uno de los siguientes apartados:
+Muestra por pantalla tus apellidos y nombre.
+Con un solo comando crea dos directorios (uno y dos) que cuelguen de tu directorio de inicio.
+Posiciónate en tu directorio uno.
+Crea un fichero nombres que contenga el nombre de tus compañeros de grupo reducido (cada nombre en una línea distinta).
+Copia el fichero creado en el paso d) en un fichero llamado compañeros en tu directorio de trabajo actual.
+Crea un directorio (otro) colgando de tu directorio de trabajo actual.
+Comprueba si tu directorio de trabajo actual es el directorio creado en el paso f), y si no lo es haz que sea.
+Usando un solo comando haz que coincida tu directorio de trabajo actual con tu directorio de inicio.
+Con un solo comando, copia todo el contenido (ficheros y directorios) de tu directorio uno en un directorio tres.
+Posiciónate en tu directorio tres.
+Usando un solo comando, copia el fichero nombres en tu directorio uno con el nombre grupo.
+Cámbiale el nombre al directorio otro (que cuelga de tu directorio tres) por basura.
+Posiciónate, con un solo comando, en tu directorio de inicio.
+Elimina, con un solo comando, todo tu directorio tres.
+Comprueba la fecha y la hora desde que están conectados todos los usuarios actuales de la máquina.
+Muestra el calendario de este año.	
+ 
+
+Ejercicio 3. Partiendo de tu directorio de inicio, realiza cada uno de los siguientes apartados:
+Consulta la ayuda del comando more.
+Crea el fichero .ejercicio3 con 20 números impares (cada uno en una línea distinta).
+Visualiza los derechos de acceso de cada uno de los ficheros/directorios que cuelga de tu directorio de inicio y contesta a las siguientes cuestiones:
+¿Quién es el propietario del fichero .. ?
+¿Cuántos directorios cuelgan de tu directorio de inicio?
+¿Qué permisos tiene tu fichero .ejercicio3 para cada grupo de usuario? Si no puedes determinarlos usa el comando que te lo permite.
+Limpia la pantalla.
+Cámbiale el nombre a tu fichero .ejercicio3 por impares.
+Crea un fichero pares que contiene 15 números pares escritos en palabras y cada uno en una línea distinta.
+Con un solo comando, visualiza el número de líneas, de palabras y de caracteres de tus ficheros impares y pares.
+Muestra por pantalla, con un solo comando, las tres primeras líneas de los ficheros impares y pares.
+Visualiza las 10 últimas líneas de tu fichero pares. ¿Has tenido que usar alguna opción de este comando?
+Determina tu identificador de usuario (UID) y tu identificador de grupo (GID) para contestar, en clase de grupo reducido, las siguientes cuestiones:
+¿Tienes la misma UID que tu compañero de la derecha?
+¿Tienes el mismo GID que tu compañero de la izquierda?
+¿Tienes el mismo GID que tu profesora?
+Con un solo comando, visualiza página a página el contenido de tus ficheros impares y pares
+Con un solo comando, elimina pidiendo confirmación tus ficheros impares y pares.
+ 
+
+Ejercicio 4. Partiendo de tu directorio de inicio, realiza cada uno de los siguientes apartados:
+Haz que tu directorio de trabajo actual sea el directorio padre de tu directorio de inicio
+Visualiza la ruta de tu directorio de trabajo actual.
+Obtén un listado de todos los ficheros/directorios que cuelgan de tu directorio de trabajo actual.
+Realiza un listado recursivo de tu directorio de inicio.
+Obtén la ayuda del comando passwd.
+Obtén la fecha y la hora del sistema.
+Usando un solo comando posiciónate en tu directorio de inicio.
+Crea un fichero materias que contenga el nombre de las materias en las que te has matriculado (cada una en una línea distinta).
+Con un solo comando, crea dos directorios grado y lru.
+Usando un solo comando, mueve tu fichero materias para que cuelgue de tu directorio grado pero con el nombre asignaturas.
+Visualiza los ficheros/directorios de tu directorio de trabajo actual y responde a la siguiente cuestión: ¿dónde está tu fichero materias?
+Posiciónate en tu directorio grado.
+Elimina el fichero asignaturas.
+Sube al directorio de inicio.	
+Con un solo comando elimina los directorios creados en el paso i).

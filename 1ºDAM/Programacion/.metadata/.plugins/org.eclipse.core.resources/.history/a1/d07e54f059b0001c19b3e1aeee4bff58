@@ -1,0 +1,86 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Agencia {
+
+	private ArrayList<Inmueble> Inmuebles = new ArrayList<Inmueble>();
+	private String nombre;
+	public Scanner scan = new Scanner(System.in);
+
+	public Agencia(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Agencia(String nombre, ArrayList<Inmueble> Inmuebles) {
+		this.nombre = nombre;
+		this.Inmuebles = Inmuebles;
+	}
+
+	public ArrayList<Inmueble> getInmuebles() {
+		return Inmuebles;
+	}
+
+	public void setInmuebles(ArrayList<Inmueble> inmuebles) {
+		Inmuebles = inmuebles;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void nuevo_inmueble() {
+		Direccion direccion;
+		String nombre_via;
+		int CP;
+		int numero;
+		boolean exit = true;
+		Direccion.tipo_vias via = Direccion.TIPO_POR_DEFECTO;
+		int select;
+		do {
+			System.out.println("Seleccione un tipo de via:" + "1/Calle\n" + "2/Avenida\n" + "3/Plaza\n" + "4/Camino\n"
+					+ "5/Carretera\n" + "6/Paseo");
+			select = scan.nextInt();
+			switch (select) {
+			case 1:
+				via = Direccion.tipo_vias.Calle;
+			case 2:
+				via = Direccion.tipo_vias.Avenida;
+			case 3:
+				via = Direccion.tipo_vias.Plaza;
+			case 4:
+				via = Direccion.tipo_vias.Camino;
+			case 5:
+				via = Direccion.tipo_vias.Carretera;
+			case 6:
+				via = Direccion.tipo_vias.Paseo;
+			default:
+				System.out.println("Seleccione una opcion válida");
+			}
+		} while (exit != true);
+
+		System.out.println("Introduzca el nombre:");
+		nombre_via = scan.next();
+		do {
+			System.out.println("Introduzca el numero:");
+			numero = scan.nextInt();
+			if (numero < 0) {
+				exit = false;
+				System.out.println("El numero debe ser positivo.");
+			}
+		} while (exit != true);
+		exit = false;
+		do {
+			System.out.println("Introduzca el codigo postal");
+			CP = scan.nextInt();
+			if (CP < 0) {
+				exit = false;
+				System.out.println("El codigo postal debe ser positivo");
+			}
+		} while (exit != true);
+		direccion = new Direccion (via, nombre_via, numero, CP);
+	}
+}

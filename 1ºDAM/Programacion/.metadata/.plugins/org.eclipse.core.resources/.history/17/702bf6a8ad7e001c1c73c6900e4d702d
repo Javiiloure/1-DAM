@@ -1,0 +1,213 @@
+public class Fecha {
+	private int dia;
+	private int mes;
+	private int año;
+
+	public Fecha() {
+		this.dia = 0;
+		this.mes = 0;
+		this.año = 0;
+	}
+
+	public Fecha(int dia, int mes, int año) {
+		this.dia = dia;
+		this.mes = mes;
+		this.año = año;
+	}
+
+	public void setdia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getdia() {
+		return dia;
+	}
+
+	public void setmes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getmes() {
+		return mes;
+	}
+
+	public void setaño(int año) {
+		this.año = año;
+	}
+
+	public int getaño() {
+		return año;
+	}
+
+	public boolean fechaCorrecta() {
+		if (mes > 12 || mes < 0) {
+			return false;
+		}
+
+		switch (mes) {
+		case 1:
+			if (dia < 0 || dia > 31)
+				return false;
+		case 2:
+			boolean bisiesto;
+			bisiesto = Fecha.esBisiesto(año);
+			if (bisiesto == true) {
+				if (dia < 0 || dia > 29) {
+					return false;
+				} else {
+					return true;
+				}
+			} else {
+				if (dia < 0 || dia > 28) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		case 3:
+			if (dia < 1 || dia > 31)
+				return false;
+		case 4:
+			if (dia < 1 || dia > 30)
+				return false;
+		case 5:
+			if (dia < 1 || dia > 31)
+				return false;
+		case 6:
+			if (dia < 1 || dia > 30)
+				return false;
+		case 7:
+			if (dia < 1 || dia > 31)
+				return false;
+		case 8:
+			if (dia < 1 || dia > 31)
+				return false;
+		case 9:
+			if (dia < 1 || dia > 30)
+				return false;
+		case 10:
+			if (dia < 1 || dia > 31)
+				return false;
+		case 11:
+			if (dia < 1 || dia > 30)
+				return false;
+		case 12:
+			if (dia < 1 || dia > 31)
+				return false;
+		}
+		return true;
+	}
+
+	private static boolean esBisiesto(int año) {
+		if ((año % 4 == 0) && ((año % 100 != 0) || (año % 400 == 0))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public void diaSiguiente() {
+		dia++;
+		switch(mes) {
+		case 1: 
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 2:
+			boolean bisiesto;
+			bisiesto = Fecha.esBisiesto(año);
+			if (bisiesto = true) {
+				if (dia > 29) {
+					mes++;
+				}
+			} else {
+				if (dia > 28) {
+					mes++;
+				}
+			}
+			break;
+		case 3:
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 4:
+			if (dia > 30) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 5:
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 6:
+			if (dia > 30) {
+				setdia(1);
+				mes++;
+			}
+		case 7:
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 8:
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 9:
+			if (dia > 30) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 10:
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 11:
+			if (dia > 30) {
+				setdia(1);
+				mes++;
+			}
+			break;
+		case 12: 
+			if (dia > 31) {
+				setdia(1);
+				mes++;
+			}
+		}
+		if (mes > 12) {
+			setmes(1);
+			año++;
+		}
+	}
+	
+	public String toString() {
+		String dia;
+		String mes;
+		String año;
+		if (this.dia < 10) {
+			dia = '0' + String.valueOf(this.dia);
+		} else {
+			dia = String.valueOf(this.dia);		
+		}
+		if (this.mes < 10) {
+			mes = '0' + String.valueOf(this.mes);
+		} else {
+			mes = String.valueOf(this.mes);
+		}
+		año = String.valueOf(this.año);
+		return dia + "-" + mes + "-" + año;
+	}
+}

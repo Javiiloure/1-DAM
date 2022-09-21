@@ -1,0 +1,32 @@
+package controlador;
+import bbdd.BDConnection;
+import modelo.Articulo;
+import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import vista.Main;
+
+public class ArticuloController {
+	private static ArrayList<Articulo> articulos;
+
+	
+	public ArticuloController() {
+		articulos = new ArrayList<Articulo>();
+		try {
+			getArticulos();
+		} catch(SQLException e) {
+			System.out.println("Error en la recuperación de datos.");
+		}
+	}
+	
+	public static void getArticulos() throws SQLException {
+		Statement s = Main.conexion.getConection().createStatement();
+		String query = "select * from articulos";
+		ResultSet rs = s.executeQuery(query);
+		while(rs.next()) {
+			System.out.println(rs.getString(1) + rs.getInt(2) + rs.getInt(3));
+		}
+	}
+}

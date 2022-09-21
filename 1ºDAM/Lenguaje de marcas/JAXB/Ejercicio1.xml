@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<personas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejercicio1.xsd">
+    <persona>
+        <nombre>Javier</nombre>
+        <apellidos>Loureiro Pérez</apellidos>
+        <usuario>Vacalouras</usuario>
+        <fecha_nacimiento>1999-10-29</fecha_nacimiento>
+        <telefono>634616442</telefono>
+        <sexo>Hombre</sexo>
+        <calificacion>7</calificacion>
+    </persona>
+</personas>

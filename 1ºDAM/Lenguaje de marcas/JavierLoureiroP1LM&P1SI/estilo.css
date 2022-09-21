@@ -1,0 +1,26 @@
+body{
+    font-family: Verdana;
+    background-color: rgb(196, 255, 222);
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    table-style
+  }
+  p{
+    font-family: Verdana;
+    font-size: large;
+  }
+table,
+    tr,
+    th,
+    td {
+    font-family: Verdana;
+     border: 1px solid black;
+     }
+     ul, ol {
+      font-family: Verdana;
+       font-size: large;
+         width: 70%;
+        margin: auto;
+        text-align: left;
+        }

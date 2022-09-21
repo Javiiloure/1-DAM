@@ -1,0 +1,11 @@
+import Electrodomestico.colores;
+import Electrodomestico.consumo_energetico;
+
+public class Tema5 {
+
+	public static void main(String[] args) {
+		Electrodomestico lavadora = new Electrodomestico(370, colores.rojo, consumo_energetico.B, 500);
+
+	}
+
+}

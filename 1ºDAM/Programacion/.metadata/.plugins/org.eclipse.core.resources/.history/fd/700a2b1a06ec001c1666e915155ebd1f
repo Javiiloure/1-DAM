@@ -1,0 +1,7 @@
+package controlador;
+
+public class TicketController {
+	public static void resumenTickets() {
+		
+	}
+}

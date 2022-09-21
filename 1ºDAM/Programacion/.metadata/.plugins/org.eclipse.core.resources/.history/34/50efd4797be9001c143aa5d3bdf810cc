@@ -1,0 +1,242 @@
+package vista;
+
+import java.util.Scanner;
+import controlador.ArticuloController;
+import controlador.MacetaController;
+import controlador.PlantaController;
+import java.sql.SQLException;
+public class ArticuloVista {
+	private static Scanner scan = new Scanner(System.in);
+
+	public static void añadirArticulo() throws SQLException {
+		String select;
+		boolean exit = false;
+		int stock = 0;
+		double precio = 0;
+		do {
+			System.out.println("Seleccione el tipo de articulo" + "\n1/Planta" + "\n2/Maceta");
+			select = scan.nextLine();
+			switch (select) {
+			case "1":
+				String nombre_planta = "";
+				String nombre_cientifico = "";
+				boolean flor = false;
+				String caracteristicas_regadio = "";
+				System.out.println("Introduzca el nombre de la planta: ");
+				nombre_planta = scan.nextLine();
+				System.out.println("Introduzca el nombre cientifico: ");
+				nombre_cientifico = scan.nextLine();
+				while (exit != true) {
+					System.out.println("Indique si es o no una flor:" + "\n1/Es una flor " + "\n2/No es un a flor");
+					select = scan.next();
+					switch (select) {
+					case "1":
+						exit = true;
+						flor = true;
+						break;
+					case "2":
+						exit = true;
+						flor = false;
+						break;
+					default:
+						System.out.println("Seleccione una opcion valida.");
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca las características de regadío(100 char max):");
+					scan.nextLine();
+					caracteristicas_regadio = scan.nextLine();
+					if (caracteristicas_regadio.length() > 100) {
+						System.out.println("Se ha excedido la longitud permitida, introduzca una descripción más corta.");
+					} else {
+						exit = true;
+					}
+				}
+				System.out.println(caracteristicas_regadio);
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca el stock del articulo");
+					stock = Integer.parseInt(scan.nextLine());
+					if (stock < 0) {
+						System.out.println("El stock no puede ser negativo");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Intorduzca el precio del articulo");
+					precio = Double.parseDouble(scan.next());
+					if (precio < 0) {
+						System.out.println("El precio no puede ser negativo");
+					} else {
+						exit = true;
+					}
+				} // Formatear precio
+				ArticuloController.añadirArticulo(stock, precio);
+				PlantaController.añadirPlanta(stock, precio, nombre_planta, nombre_cientifico, flor, caracteristicas_regadio);
+				break;
+			case "2":
+				int alto_cm = 0;
+				int diametro_cm = 0;
+				String color = "";
+				String material = "";
+				boolean exterior = false ;
+				while (exit != true) {
+					System.out.println("Introduzca la altura en cm:");
+					alto_cm = scan.nextInt();
+					if (alto_cm < 0) {
+						System.out.println("La altura no puede ser negativa");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Introduzca el diametro en cm:");
+					diametro_cm = scan.nextInt();
+					if (diametro_cm < 0) {
+						System.out.println("El diametro no puede ser negativo.");
+					} else {
+						exit = true;
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Selecccione un color para la maceta:" + "\n1/Blanco" + "\n2/Negro" + "\n3/Gris"
+							+ "\n4/Verde" + "\n5/Rojo" + "\n6/Azul" + "\n7/Amarillo" + "\n8/Violeta" + "\n9/Naranja");
+					select = scan.next();
+					switch (select) {
+					case "1":
+						color = "Blanco";
+						exit = true;
+						break;
+					case "2":
+						color = "Negro";
+						exit = true;
+						break;
+					case "3":
+						color = "Gris";
+						exit = true;
+						break;
+					case "4":
+						color = "Verde";
+						exit = true;
+						break;
+					case "5":
+						color = "Rojo";
+						exit = true;
+						break;
+					case "6":
+						color = "Azul";
+						exit = true;
+						break;
+					case "7":
+						color = "Amarillo";
+						exit = true;
+						break;
+					case "8":
+						color = "Violeta";
+						exit = true;
+						break;
+					case "9":
+						color = "Naranja";
+						exit = true;
+						break;
+					default:
+						System.out.println("Seleccione una opcion valida.");
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println("Selecccione un material para la maceta:" + "\n1/Plastico" + "\n2/Arcilla"
+							+ "\n3/Piedra" + "\n4/Madera" + "\n5/Cemento" + "\n6/Fibrocemento");
+					select = scan.next();
+					switch (select) {
+					case "1":
+						material = "Plastico";
+						exit = true;
+						break;
+					case "2":
+						material = "Arcilla";
+						exit = true;
+						break;
+					case "3":
+						material = "Piedra";
+						exit = true;
+						break;
+					case "4":
+						material = "Madera";
+						exit = true;
+						break;
+					case "5":
+						material = "Cemento";
+						exit = true;
+						break;
+					case "6":
+						material = "Fibrocemneto";
+						exit = true;
+						break;
+					default:
+						System.out.println("Seleccione una opcion valida.");
+					}
+				}
+				exit = false;
+				while (exit != true) {
+					System.out.println(
+							"Seleccione el tipo de maceta" + "\n1/Maceta de exterior" + "\n2/Maceta de interior");
+					select = scan.next();
+					switch (select) {
+					case "1":
+						exterior = true;
+						exit = true;
+						break;
+					case "2":
+						exterior = false;
+						exit = false;
+						break;
+					default:
+						System.out.println("Selecccione una opción válida.");
+					}
+				}
+			ArticuloController.añadirArticulo(stock, precio);
+			MacetaController.añadirMaceta(stock, precio, alto_cm, diametro_cm, color, material, exterior);
+			default:
+				System.out.println("Seleccione una opcion valida.");
+			}
+			
+		} while (exit != true);
+	}
+
+	public static void borrarArticulo() {
+		int codigo_articulo;
+		boolean exit = false;
+		while (exit != true) {
+			System.out.println("Introduzca el codigo del articulo a eliminar");
+			codigo_articulo = scan.nextInt();
+			if (codigo_articulo < 0) {
+				System.out.println("El codigo no puede ser negativo.");
+			} else {
+				exit = true;
+			}
+			ArticuloController.borrarArticulo();
+		}
+	}
+
+	public void modificarArticulo() {
+
+	}
+
+	public void listarArticulos() {
+
+	}
+
+	public void resumenTickets() {
+
+	}
+
+	public void articulosMasVendidos() {
+
+	}
+}

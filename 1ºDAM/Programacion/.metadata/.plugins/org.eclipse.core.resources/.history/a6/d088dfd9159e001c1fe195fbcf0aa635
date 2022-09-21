@@ -1,0 +1,20 @@
+
+public class Television extends Electrodomestico {
+	
+	private double pulgadas;
+	private boolean sintonizador_TDT;
+	public static final double PULGADAS_POR_DEFECTO = 20;
+	public static final boolean SINTONIZADOR_POR_DEFECTO = false;
+	
+	public Television() {
+		super();
+		this.pulgadas = PULGADAS_POR_DEFECTO;
+		this.sintonizador_TDT = SINTONIZADOR_POR_DEFECTO;
+	}
+	
+	public Television (double precio, int peso) {
+		super(precio, peso);
+		this.pulgadas = PULGADAS_POR_DEFECTO;
+		this.sintonizador_TDT = SINTONIZADOR_POR_DEFECTO;
+	}
+}

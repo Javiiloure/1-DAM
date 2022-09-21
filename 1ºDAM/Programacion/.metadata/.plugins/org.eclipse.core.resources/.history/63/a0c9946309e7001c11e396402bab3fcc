@@ -1,0 +1,27 @@
+package vista;
+
+public class ArticuloVista {
+	public void añadirArticulo() {
+		
+	}
+	
+	public void borrarArticulo() {
+		
+	}
+	
+	public void modificarArticulo() {
+		
+	}
+	
+	public void listarArticulos() {
+		
+	}
+	
+	public void resumenTickets() {
+		
+	}
+	
+	public void articulosMasVendidos() {
+		
+	}
+}

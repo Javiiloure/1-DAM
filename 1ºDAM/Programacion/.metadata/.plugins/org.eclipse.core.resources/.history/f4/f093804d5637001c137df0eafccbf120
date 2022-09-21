@@ -1,0 +1,98 @@
+/*  //Ejercicio1
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		
+		int a;
+		int b;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca un valor a: ");
+		a = scan.nextInt();
+		
+		System.out.println("Introduzca un valor b: ");
+		b = scan.nextInt();
+		scan.close();
+		cambio(a , b);
+	}
+	
+	public static void cambio(int a, int b) {
+		
+		int aux;
+		aux = a;
+		a = b;
+		b = aux;
+		System.out.println("Valor a = " + a);
+		System.out.println("Valor b = " + b);	
+	}
+}
+*/
+
+/* //Ejercicio 2
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		int a;
+		int b;
+		int c;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca valor a: ");
+		a = scan.nextInt();
+		System.out.println("Introduzca valor b: ");
+		b = scan.nextInt();
+		System.out.println("Introduzca valor c: ");
+		c = scan.nextInt();
+		scan.close();
+		System.out.println("El mayor valor es " + mayor(a, b, c));
+	}
+
+	public static int mayor(int a, int b, int c) {
+		if (a >= b && a >= c) {
+			return a;
+		} else if (b >= a && b >= c) {
+			return b;
+		} else {
+			return c;
+		}
+	}
+}
+*/
+
+//Ejercicio3
+import java.util.Scanner;
+
+public class Tema2 {
+	public static void main(String[] args) {
+		int prec;
+		int e;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Introduzca los decimales: ");
+		prec = scan.nextInt();
+		while (prec < 0) {
+			System.out.println("Introduzca un positivo: ");
+			prec = scan.nextInt();
+		}
+		scan.close();
+		e = exp(prec);
+		System.out.println(e);
+	}
+	
+	public static int exp (int a) {
+		int x = 0;
+		for(int i = 1; i < a; i++) {
+			x = i / factorial(i);
+			if (i == 1) {
+				x++;
+			}
+			System.out.println(x);
+		}
+		return x;
+	}
+	public static int factorial(int b) {
+		for(int i = b; i > 1; i--) {
+			b = b * i;
+		}
+		return b;
+	}
+}

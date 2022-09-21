@@ -1,0 +1,25 @@
+public class NIF {
+	int dni;
+	char letra;
+	
+	public NIF () {
+		this.dni = 0;
+		
+	}
+	
+	public NIF (int dni) {
+		this.dni = dni;
+		
+	}
+	public void setdni(int dni) {
+		this.dni = dni;
+	}
+	
+	public int getdni() {
+		return dni;
+	}
+	
+	public void setletra(char letra) {
+		this.letra = letra;
+	}
+}

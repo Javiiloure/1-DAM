@@ -1,0 +1,12 @@
+
+public class Electrodomestico {
+	protected double precio_base;
+	protected String color;
+	protected char consumo;
+	protected enum consumo_energetico {A, B, C, D, E, F};
+	
+	public Electrodomestico() {
+		this.color = "Blanco";
+		this.consumo = consumo_energetico.F;
+	}
+}

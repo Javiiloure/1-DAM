@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="tienda_musica">
+        <xsd:complexType>
+            <xsd:element name="album">
+                <xsd:sequence>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="titulo" type="xs:string" />
+                            <xsd:element name="artista" type="xs:string" />
+                            <xsd:element name="productores" type="xs:string" />
+                            <xsd:element name="n_canciones" type="xs:positiveInteger" />
+                            <xsd:element name="duracion" type="xs:time" />
+                            <xsd:element name="f_publicacion" type="xs:date" />
+                            <xsd:element name="generos" type="xs:string" />
+                            <xsd:element name="precio" type="xs:decimal" />
+                            <xsd:element name="caratula" type="xs:string" />
+                            <xsd:element name="formato">
+                                <xsd:complexType>
+                                    <xsd:choice>
+                                        <xsd:element name="Digital" type="xs:string" />
+                                        <xsd:element name="CD" type="xs:string" />
+                                        <xsd:element name="DVD" type="xs:string" />
+                                        <xsd:element name="Vinilo" type="xs:string" />
+                                    </xsd:choice>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="cancion">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="titulo_cancion" type="xs:string" />
+                                        <xsd:element name="duracion_cancion" type="xs:time" />
+                                        <xsd:element name="posicion" type="xs:int" />
+                                        <xsd:element name="colaboracion" type="xs:string" />
+                                        <xsd:element name="generos_cancion" type="xs:string" />
+                                        <xsd:element name="letristas" type="xs:string" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                         </xsd:sequence>
+                        <xsd:attribute name="discografica" use="optional" type="xs:string" />
+                        <xsd:attribute name="id" use="required" type="xs:ID" />
+                    </xsd:complexType>
+                </xsd:sequence>
+            </xsd:element>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
